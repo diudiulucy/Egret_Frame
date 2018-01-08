@@ -117,9 +117,10 @@ class Main extends eui.UILayer {
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
 
+        SceneManager.Instance.runWithScene(SceneConst[SceneConst.HallScene]);
 
-        let listPanel = new Hall();
-        this.addChild(listPanel);
+        // let listPanel = new HallLayer();
+        // this.addChild(listPanel);
 
         // let tarbar:eui.TabBar = new eui.TabBar();
         // tarbar.layout = new eui.VerticalLayout();

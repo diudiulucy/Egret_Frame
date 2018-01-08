@@ -1,7 +1,10 @@
 {
-    "160bf4adebd": {
-        "path": "ScrollerList.ts",
-        "class": "ScrollerList",
-        "parentPath": ""
-    }
+  "160bf4adebd": {
+    "path": "ScrollerList.ts",
+    "class": "ScrollerList",
+    "parentPath": ""
+  },
+  "global": {
+    "globalAutoLayerMarkEnable": false
+  }
 }

@@ -182,8 +182,9 @@ var Main = (function (_super) {
         // ];
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
-        var listPanel = new Hall();
-        this.addChild(listPanel);
+        SceneManager.Instance.runWithScene(SceneConst[SceneConst.HallScene]);
+        // let listPanel = new HallLayer();
+        // this.addChild(listPanel);
         // let tarbar:eui.TabBar = new eui.TabBar();
         // tarbar.layout = new eui.VerticalLayout();
         // tarbar.horizontalCenter = 0;

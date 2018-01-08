@@ -56,11 +56,27 @@ declare module Skin{
 	class Hall extends eui.Skin{
 	}
 }
+declare module skins{
+	class Menu extends eui.Skin{
+	}
+}
+declare module skins{
+	class Rank extends eui.Skin{
+	}
+}
+declare module skins{
+	class HallMenuItem extends eui.Skin{
+	}
+}
+declare module skins{
+	class HallPlayItem extends eui.Skin{
+	}
+}
 declare class playerState extends eui.Skin{
 }
-declare class testRender extends eui.Skin{
-}
-declare module Skin{
-	class ScrollerPanel extends eui.Skin{
+declare module skins{
+	class RankItem extends eui.Skin{
 	}
+}
+declare class testRender extends eui.Skin{
 }
