@@ -218,6 +218,7 @@ class Main extends eui.UILayer {
      * Description file loading is successful, start to play the animation
      */
     private startAnimation(result: Array<any>): void {
+        let a = 1;
         // let parser = new egret.HtmlTextParser();
 
         // let textflowArr = result.map(text => parser.parse(text));
