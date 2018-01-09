@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.Rank" width="404" height="416" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*" xmlns:w="http://ns.egret.com/wing">
+	<e:Image source="rank_bg_png" width="100%" height="100%"/>
+	<ns1:ScrollerList id="rankList" width="252" height="259" horizontalCenter="0" y="93" itemRendererSkinName="skins.RankItem"/>
+</e:Skin>
