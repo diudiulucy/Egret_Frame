@@ -7,254 +7,319 @@
 	],
 	"resources": [
 		{
-			"name": "description_json",
+			"url": "config/description.json",
 			"type": "json",
-			"url": "config/description.json"
+			"name": "description_json"
 		},
 		{
-			"name": "button_down_png",
+			"url": "assets/egret/Button/button_down.png",
 			"type": "image",
-			"url": "assets/egret/Button/button_down.png"
+			"name": "button_down_png"
 		},
 		{
-			"name": "button_up_png",
+			"url": "assets/egret/Button/button_up.png",
 			"type": "image",
-			"url": "assets/egret/Button/button_up.png"
+			"name": "button_up_png"
 		},
 		{
-			"name": "checkbox_select_disabled_png",
+			"url": "assets/egret/CheckBox/checkbox_select_disabled.png",
 			"type": "image",
-			"url": "assets/egret/CheckBox/checkbox_select_disabled.png"
+			"name": "checkbox_select_disabled_png"
 		},
 		{
-			"name": "checkbox_select_down_png",
+			"url": "assets/egret/CheckBox/checkbox_select_down.png",
 			"type": "image",
-			"url": "assets/egret/CheckBox/checkbox_select_down.png"
+			"name": "checkbox_select_down_png"
 		},
 		{
-			"name": "checkbox_select_up_png",
+			"url": "assets/egret/CheckBox/checkbox_select_up.png",
 			"type": "image",
-			"url": "assets/egret/CheckBox/checkbox_select_up.png"
+			"name": "checkbox_select_up_png"
 		},
 		{
-			"name": "checkbox_unselect_png",
+			"url": "assets/egret/CheckBox/checkbox_unselect.png",
 			"type": "image",
-			"url": "assets/egret/CheckBox/checkbox_unselect.png"
+			"name": "checkbox_unselect_png"
 		},
 		{
-			"name": "bg_jpg",
+			"url": "assets/egret/bg.jpg",
 			"type": "image",
-			"url": "assets/egret/bg.jpg"
+			"name": "bg_jpg"
 		},
 		{
-			"name": "egret_icon_png",
+			"url": "assets/egret/egret_icon.png",
 			"type": "image",
-			"url": "assets/egret/egret_icon.png"
+			"name": "egret_icon_png"
 		},
 		{
-			"name": "selected_png",
+			"url": "assets/egret/ItemRenderer/selected.png",
 			"type": "image",
-			"url": "assets/egret/ItemRenderer/selected.png"
+			"name": "selected_png"
 		},
 		{
-			"name": "border_png",
+			"url": "assets/egret/Panel/border.png",
 			"type": "image",
-			"url": "assets/egret/Panel/border.png"
+			"name": "border_png"
 		},
 		{
-			"name": "header_png",
+			"url": "assets/egret/Panel/header.png",
 			"type": "image",
-			"url": "assets/egret/Panel/header.png"
+			"name": "header_png"
 		},
 		{
-			"name": "thumb_pb_png",
+			"url": "assets/egret/ProgressBar/thumb_pb.png",
 			"type": "image",
-			"url": "assets/egret/ProgressBar/thumb_pb.png"
+			"name": "thumb_pb_png"
 		},
 		{
-			"name": "track_pb_png",
+			"url": "assets/egret/ProgressBar/track_pb.png",
 			"type": "image",
-			"url": "assets/egret/ProgressBar/track_pb.png"
+			"name": "track_pb_png"
 		},
 		{
-			"name": "radiobutton_select_disabled_png",
+			"url": "assets/egret/RadioButton/radiobutton_select_disabled.png",
 			"type": "image",
-			"url": "assets/egret/RadioButton/radiobutton_select_disabled.png"
+			"name": "radiobutton_select_disabled_png"
 		},
 		{
-			"name": "radiobutton_select_down_png",
+			"url": "assets/egret/RadioButton/radiobutton_select_down.png",
 			"type": "image",
-			"url": "assets/egret/RadioButton/radiobutton_select_down.png"
+			"name": "radiobutton_select_down_png"
 		},
 		{
-			"name": "radiobutton_select_up_png",
+			"url": "assets/egret/RadioButton/radiobutton_select_up.png",
 			"type": "image",
-			"url": "assets/egret/RadioButton/radiobutton_select_up.png"
+			"name": "radiobutton_select_up_png"
 		},
 		{
-			"name": "radiobutton_unselect_png",
+			"url": "assets/egret/RadioButton/radiobutton_unselect.png",
 			"type": "image",
-			"url": "assets/egret/RadioButton/radiobutton_unselect.png"
+			"name": "radiobutton_unselect_png"
 		},
 		{
-			"name": "roundthumb_png",
+			"url": "assets/egret/ScrollBar/roundthumb.png",
 			"type": "image",
-			"url": "assets/egret/ScrollBar/roundthumb.png"
+			"name": "roundthumb_png"
 		},
 		{
-			"name": "track_sb_png",
+			"url": "assets/egret/ScrollBar/track_sb.png",
 			"type": "image",
-			"url": "assets/egret/ScrollBar/track_sb.png"
+			"name": "track_sb_png"
 		},
 		{
-			"name": "thumb_png",
+			"url": "assets/egret/Slider/thumb.png",
 			"type": "image",
-			"url": "assets/egret/Slider/thumb.png"
+			"name": "thumb_png"
 		},
 		{
-			"name": "track_png",
+			"url": "assets/egret/Slider/track.png",
 			"type": "image",
-			"url": "assets/egret/Slider/track.png"
+			"name": "track_png"
 		},
 		{
-			"name": "tracklight_png",
+			"url": "assets/egret/Slider/tracklight.png",
 			"type": "image",
-			"url": "assets/egret/Slider/tracklight.png"
+			"name": "tracklight_png"
 		},
 		{
-			"name": "handle_png",
+			"url": "assets/egret/ToggleSwitch/handle.png",
 			"type": "image",
-			"url": "assets/egret/ToggleSwitch/handle.png"
+			"name": "handle_png"
 		},
 		{
-			"name": "off_png",
+			"url": "assets/egret/ToggleSwitch/off.png",
 			"type": "image",
-			"url": "assets/egret/ToggleSwitch/off.png"
+			"name": "off_png"
 		},
 		{
-			"name": "on_png",
+			"url": "assets/egret/ToggleSwitch/on.png",
 			"type": "image",
-			"url": "assets/egret/ToggleSwitch/on.png"
+			"name": "on_png"
 		},
 		{
-			"name": "tab_png",
+			"url": "assets/commom/tab.png",
 			"type": "image",
-			"url": "assets/commom/tab.png"
+			"name": "tab_png"
 		},
 		{
-			"name": "hall_bg_jpg",
+			"url": "assets/bg/hall_bg.jpg",
 			"type": "image",
-			"url": "assets/bg/hall_bg.jpg"
+			"name": "hall_bg_jpg"
 		},
 		{
-			"name": "back_png",
+			"url": "assets/bg/back.png",
 			"type": "image",
-			"url": "assets/bg/back.png"
+			"name": "back_png"
 		},
 		{
-			"name": "rich_png",
+			"url": "assets/hall/rich.png",
 			"type": "image",
-			"url": "assets/hall/rich.png"
+			"name": "rich_png"
 		},
 		{
-			"name": "rich_selected_png",
+			"url": "assets/hall/rich_selected.png",
 			"type": "image",
-			"url": "assets/hall/rich_selected.png"
+			"name": "rich_selected_png"
 		},
 		{
-			"name": "plebs_png",
+			"url": "assets/hall/plebs.png",
 			"type": "image",
-			"url": "assets/hall/plebs.png"
+			"name": "plebs_png"
 		},
 		{
-			"name": "plebs_selected_png",
+			"url": "assets/hall/plebs_selected.png",
 			"type": "image",
-			"url": "assets/hall/plebs_selected.png"
+			"name": "plebs_selected_png"
 		},
 		{
-			"name": "betGod_png",
+			"url": "assets/hall/betGod.png",
 			"type": "image",
-			"url": "assets/hall/betGod.png"
+			"name": "betGod_png"
 		},
 		{
-			"name": "betGod_selected_png",
+			"url": "assets/hall/betGod_selected.png",
 			"type": "image",
-			"url": "assets/hall/betGod_selected.png"
+			"name": "betGod_selected_png"
 		},
 		{
-			"name": "newBie_png",
+			"url": "assets/hall/newBie.png",
 			"type": "image",
-			"url": "assets/hall/newBie.png"
+			"name": "newBie_png"
 		},
 		{
-			"name": "newBie_selected_png",
+			"url": "assets/hall/newBie_selected.png",
 			"type": "image",
-			"url": "assets/hall/newBie_selected.png"
+			"name": "newBie_selected_png"
 		},
 		{
-			"name": "feedback_png",
+			"url": "assets/hall/menu/feedback.png",
 			"type": "image",
-			"url": "assets/hall/menu/feedback.png"
+			"name": "feedback_png"
 		},
 		{
-			"name": "share_png",
+			"url": "assets/hall/menu/share.png",
 			"type": "image",
-			"url": "assets/hall/menu/share.png"
+			"name": "share_png"
 		},
 		{
-			"name": "benifit_png",
+			"url": "assets/hall/menu/benifit.png",
 			"type": "image",
-			"url": "assets/hall/menu/benifit.png"
+			"name": "benifit_png"
 		},
 		{
-			"name": "shop_png",
+			"url": "assets/hall/menu/shop.png",
 			"type": "image",
-			"url": "assets/hall/menu/shop.png"
+			"name": "shop_png"
 		},
 		{
-			"name": "settings_png",
+			"url": "assets/hall/menu/settings.png",
 			"type": "image",
-			"url": "assets/hall/menu/settings.png"
+			"name": "settings_png"
 		},
 		{
-			"name": "play_png",
+			"url": "assets/hall/menu/play.png",
 			"type": "image",
-			"url": "assets/hall/menu/play.png"
+			"name": "play_png"
 		},
 		{
-			"name": "mail_png",
+			"url": "assets/hall/menu/mail.png",
 			"type": "image",
-			"url": "assets/hall/menu/mail.png"
+			"name": "mail_png"
 		},
 		{
-			"name": "menu_bg_png",
+			"url": "assets/hall/menu/menu_bg.png",
 			"type": "image",
-			"url": "assets/hall/menu/menu_bg.png"
+			"name": "menu_bg_png"
 		},
 		{
-			"name": "left_png",
+			"url": "assets/hall/menu/left.png",
 			"type": "image",
-			"url": "assets/hall/menu/left.png"
+			"name": "left_png"
 		},
 		{
-			"name": "rank_bg_png",
+			"url": "assets/hall/rank/rank_bg.png",
 			"type": "image",
-			"url": "assets/hall/rank/rank_bg.png"
+			"name": "rank_bg_png"
 		},
 		{
-			"name": "head_01_png",
+			"url": "assets/hall/head/head_01.png",
 			"type": "image",
-			"url": "assets/hall/head/head_01.png"
+			"name": "head_01_png"
 		},
 		{
-			"name": "green_png",
+			"url": "assets/bmfont/green.png",
 			"type": "image",
-			"url": "assets/bmfont/green.png"
+			"name": "green_png"
 		},
 		{
-			"name": "green_fnt",
+			"url": "assets/bmfont/green.fnt",
 			"type": "font",
-			"url": "assets/bmfont/green.fnt"
+			"name": "green_fnt"
+		},
+		{
+			"url": "assets/hall/shop/bg.png",
+			"type": "image",
+			"name": "bg_png"
+		},
+		{
+			"url": "assets/hall/shop/close.png",
+			"type": "image",
+			"name": "close_png"
+		},
+		{
+			"url": "assets/hall/shop/coin.png",
+			"type": "image",
+			"name": "coin_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_01.png",
+			"type": "image",
+			"name": "diamond_01_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_02.png",
+			"type": "image",
+			"name": "diamond_02_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_03.png",
+			"type": "image",
+			"name": "diamond_03_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_04.png",
+			"type": "image",
+			"name": "diamond_04_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_05.png",
+			"type": "image",
+			"name": "diamond_05_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_06.png",
+			"type": "image",
+			"name": "diamond_06_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_07.png",
+			"type": "image",
+			"name": "diamond_07_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_08.png",
+			"type": "image",
+			"name": "diamond_08_png"
+		},
+		{
+			"url": "assets/hall/shop/itembg.png",
+			"type": "image",
+			"name": "itembg_png"
+		},
+		{
+			"url": "assets/hall/shop/shop_title.png",
+			"type": "image",
+			"name": "shop_title_png"
 		}
 	]
 }

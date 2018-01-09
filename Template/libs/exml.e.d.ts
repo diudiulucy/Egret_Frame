@@ -57,10 +57,6 @@ declare module Skin{
 	}
 }
 declare module skins{
-	class Menu extends eui.Skin{
-	}
-}
-declare module skins{
 	class Rank extends eui.Skin{
 	}
 }
@@ -78,5 +74,13 @@ declare module skins{
 	class RankItem extends eui.Skin{
 	}
 }
+declare module skins{
+	class ShopItem extends eui.Skin{
+	}
+}
 declare class testRender extends eui.Skin{
+}
+declare module skins{
+	class Shop extends eui.Skin{
+	}
 }
