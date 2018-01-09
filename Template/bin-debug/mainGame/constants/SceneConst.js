@@ -5,9 +5,8 @@
  */
 var SceneConst;
 (function (SceneConst) {
-    SceneConst[SceneConst["LoadScene"] = 0] = "LoadScene";
-    SceneConst[SceneConst["LoginScene"] = 1] = "LoginScene";
-    SceneConst[SceneConst["HallScene"] = 2] = "HallScene";
-    SceneConst[SceneConst["GameScene"] = 3] = "GameScene";
+    SceneConst[SceneConst["LoginScene"] = 0] = "LoginScene";
+    SceneConst[SceneConst["HallScene"] = 1] = "HallScene";
+    SceneConst[SceneConst["GameScene"] = 2] = "GameScene";
 })(SceneConst || (SceneConst = {}));
 //# sourceMappingURL=SceneConst.js.map

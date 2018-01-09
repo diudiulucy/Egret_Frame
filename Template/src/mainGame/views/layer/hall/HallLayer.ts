@@ -1,17 +1,41 @@
-class HallLayer extends eui.Component {
+class HallLayer extends Layer {
 	private player: ScrollerList;
 	private virtuallayout: eui.ToggleButton;
 	private virtual: eui.Label;
 	private btn_new: eui.Button;
 	private arrCol: eui.ArrayCollection;
-	private menu_bottom:HallMenu;
-	private gameEntryList:eui.List;
-	private menu_list:eui.List;
+	private menu_bottom: HallMenu;
+	private gameEntryList: eui.List;
+	private menu_list: eui.List;
+	
+
 	public constructor() {
 		super();
 		this.skinName = "Skin.Hall";
 		this.percentWidth = 100;
 		this.percentHeight = 100;
+	}
+
+	protected init(): void {
+		super.init();
+	}
+
+	protected setOnTouchListener() {
+		this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
+		this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
+
+	
+	}
+
+	protected removeOnTouchListener() {
+		this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
+		
 	}
 
 	protected childrenCreated() {
@@ -66,11 +90,7 @@ class HallLayer extends eui.Component {
 			itemArray.push(item);
 		}
 
-		this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
-		this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
+
 		this.virtual.text = this.player.useVirtualLayout == true ? "开启" : "关闭";
 
 		let layout = this.player.getVerticalLayout();
@@ -96,7 +116,8 @@ class HallLayer extends eui.Component {
 	private _onItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
 		let shop = new ShopLayer();
-		this.addChild(shop);
+		PopupManager.Instance.open(shop, false, EffectType.Violent);
+		// this.addChild(shop);
 	}
 
 	private _onBtnNewClick() {

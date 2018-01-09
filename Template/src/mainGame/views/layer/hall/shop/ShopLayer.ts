@@ -1,6 +1,23 @@
-class ShopLayer extends eui.Component{
+class ShopLayer extends Layer {
+	private btn_close: eui.Button;
+
 	public constructor() {
 		super();
 		this.skinName = "skins.Shop";
+		this.percentWidth = 100;
+		this.percentHeight = 100;
+	}
+
+	protected setOnTouchListener() {
+
+		this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
+	}
+
+	protected removeOnTouchListener() {
+	}
+
+	protected _onCloseClick() {
+	
+		PopupManager.Instance.close(this, 1);
 	}
 }

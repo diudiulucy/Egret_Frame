@@ -80,6 +80,10 @@ declare module skins{
 }
 declare class testRender extends eui.Skin{
 }
+declare module Skin{
+	class LoginLayer extends eui.Skin{
+	}
+}
 declare module skins{
 	class Shop extends eui.Skin{
 	}

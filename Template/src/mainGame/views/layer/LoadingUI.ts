@@ -27,16 +27,20 @@
 //
 //////////////////////////////////////////////////////////////////////////////////////
 
-class LoadingUI extends egret.Sprite implements RES.PromiseTaskReporter {
+class LoadingUI extends Layer implements RES.PromiseTaskReporter {
 
     public constructor() {
         super();
+        
         this.createView();
     }
 
     private textField: egret.TextField;
 
     private createView(): void {
+        this.percentWidth = 100;
+        this.percentHeight = 100;
+        
         this.textField = new egret.TextField();
         this.addChild(this.textField);
         this.textField.y = 300;

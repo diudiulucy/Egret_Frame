@@ -182,7 +182,7 @@ var Main = (function (_super) {
         // ];
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
-        SceneManager.Instance.runWithScene(SceneConst[SceneConst.HallScene]);
+        SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // let listPanel = new HallLayer();
         // this.addChild(listPanel);
         // let tarbar:eui.TabBar = new eui.TabBar();
@@ -269,6 +269,7 @@ var Main = (function (_super) {
      * Description file loading is successful, start to play the animation
      */
     Main.prototype.startAnimation = function (result) {
+        var a = 1;
         // let parser = new egret.HtmlTextParser();
         // let textflowArr = result.map(text => parser.parse(text));
         // let textfield = this.textfield;

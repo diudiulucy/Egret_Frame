@@ -38,6 +38,7 @@
 		"resource/views/itemRender/RankItem.exml",
 		"resource/views/itemRender/ShopItem.exml",
 		"resource/views/itemRender/testRender.exml",
+		"resource/views/login/LoginLayer.exml",
 		"resource/views/hall/shop/Shop.exml"
 	],
 	"path": "resource/default.thm.json"

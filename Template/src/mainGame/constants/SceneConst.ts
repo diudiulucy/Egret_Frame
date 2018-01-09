@@ -4,7 +4,6 @@
  * @date 2018/01/05
  */
 enum SceneConst {
-    LoadScene,
     LoginScene,
     HallScene,
     GameScene,

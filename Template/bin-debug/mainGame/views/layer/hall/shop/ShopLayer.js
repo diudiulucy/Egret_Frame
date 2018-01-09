@@ -13,9 +13,19 @@ var ShopLayer = (function (_super) {
     function ShopLayer() {
         var _this = _super.call(this) || this;
         _this.skinName = "skins.Shop";
+        _this.percentWidth = 100;
+        _this.percentHeight = 100;
         return _this;
     }
+    ShopLayer.prototype.setOnTouchListener = function () {
+        this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
+    };
+    ShopLayer.prototype.removeOnTouchListener = function () {
+    };
+    ShopLayer.prototype._onCloseClick = function () {
+        PopupManager.Instance.close(this, 1);
+    };
     return ShopLayer;
-}(eui.Component));
+}(Layer));
 __reflect(ShopLayer.prototype, "ShopLayer");
 //# sourceMappingURL=ShopLayer.js.map

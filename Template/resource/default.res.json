@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,back_png,rich_png,rich_selected_png,plebs_png,plebs_selected_png,betGod_png,betGod_selected_png,newBie_png,newBie_selected_png,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt",
+			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,rich_png,rich_selected_png,plebs_png,plebs_selected_png,betGod_png,betGod_selected_png,newBie_png,newBie_selected_png,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png",
 			"name": "preload"
 		}
 	],
@@ -145,11 +145,6 @@
 			"url": "assets/bg/hall_bg.jpg",
 			"type": "image",
 			"name": "hall_bg_jpg"
-		},
-		{
-			"url": "assets/bg/back.png",
-			"type": "image",
-			"name": "back_png"
 		},
 		{
 			"url": "assets/hall/rich.png",
@@ -320,6 +315,16 @@
 			"url": "assets/hall/shop/shop_title.png",
 			"type": "image",
 			"name": "shop_title_png"
+		},
+		{
+			"name": "PreLoadingBg_png",
+			"type": "image",
+			"url": "assets/bg/PreLoadingBg.png"
+		},
+		{
+			"name": "back_png",
+			"type": "image",
+			"url": "assets/commom/back.png"
 		}
 	]
 }

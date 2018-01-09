@@ -44,6 +44,8 @@ var LoadingUI = (function (_super) {
         return _this;
     }
     LoadingUI.prototype.createView = function () {
+        this.percentWidth = 100;
+        this.percentHeight = 100;
         this.textField = new egret.TextField();
         this.addChild(this.textField);
         this.textField.y = 300;
@@ -55,6 +57,6 @@ var LoadingUI = (function (_super) {
         this.textField.text = "Loading..." + current + "/" + total;
     };
     return LoadingUI;
-}(egret.Sprite));
+}(Layer));
 __reflect(LoadingUI.prototype, "LoadingUI", ["RES.PromiseTaskReporter"]);
 //# sourceMappingURL=LoadingUI.js.map

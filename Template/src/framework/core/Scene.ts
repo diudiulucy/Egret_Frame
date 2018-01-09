@@ -23,6 +23,14 @@ class Scene extends eui.UILayer {
         this._isRunning = true;
     }
 
+    /**
+     * 场景是否在运行
+     * @return boolean true表示正在运行，falseb表示没有运行
+    */
+    public get isRunning(): boolean {
+        return this._isRunning;
+    }
+
     // 进入层而且过渡动画结束时调用           
     public onEnterTransitionDidFinish() {
         // console.log(this.TAG + " onEnterTransitionDidFinish");

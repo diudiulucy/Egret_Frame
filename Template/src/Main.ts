@@ -117,7 +117,7 @@ class Main extends eui.UILayer {
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
 
-        SceneManager.Instance.runWithScene(SceneConst[SceneConst.HallScene]);
+        SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
 
         // let listPanel = new HallLayer();
         // this.addChild(listPanel);

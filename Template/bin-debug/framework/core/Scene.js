@@ -31,6 +31,17 @@ var Scene = (function (_super) {
         console.log(this.TAG + " init");
         this._isRunning = true;
     };
+    Object.defineProperty(Scene.prototype, "isRunning", {
+        /**
+         * 场景是否在运行
+         * @return boolean true表示正在运行，falseb表示没有运行
+        */
+        get: function () {
+            return this._isRunning;
+        },
+        enumerable: true,
+        configurable: true
+    });
     // 进入层而且过渡动画结束时调用           
     Scene.prototype.onEnterTransitionDidFinish = function () {
         // console.log(this.TAG + " onEnterTransitionDidFinish");

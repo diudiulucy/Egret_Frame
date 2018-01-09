@@ -17,6 +17,22 @@ var HallLayer = (function (_super) {
         _this.percentHeight = 100;
         return _this;
     }
+    HallLayer.prototype.init = function () {
+        _super.prototype.init.call(this);
+    };
+    HallLayer.prototype.setOnTouchListener = function () {
+        this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
+        this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
+    };
+    HallLayer.prototype.removeOnTouchListener = function () {
+        this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
+    };
     HallLayer.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
         var itemArray = [];
@@ -26,11 +42,6 @@ var HallLayer = (function (_super) {
             item.price = 100 + i;
             itemArray.push(item);
         }
-        this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-        this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-        this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-        this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
-        this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
         this.virtual.text = this.player.useVirtualLayout == true ? "开启" : "关闭";
         var layout = this.player.getVerticalLayout();
         // let layout = this.player.getTileLayout();
@@ -49,7 +60,8 @@ var HallLayer = (function (_super) {
     HallLayer.prototype._onItemTap = function (event) {
         console.log(event.itemIndex);
         var shop = new ShopLayer();
-        this.addChild(shop);
+        PopupManager.Instance.open(shop, false, EffectType.Violent);
+        // this.addChild(shop);
     };
     HallLayer.prototype._onBtnNewClick = function () {
         // this.player.dataProvider = 
@@ -64,6 +76,6 @@ var HallLayer = (function (_super) {
         // this.arrCol.replaceAll([{ name: "daye", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" }]);
     };
     return HallLayer;
-}(eui.Component));
+}(Layer));
 __reflect(HallLayer.prototype, "HallLayer");
 //# sourceMappingURL=HallLayer.js.map
