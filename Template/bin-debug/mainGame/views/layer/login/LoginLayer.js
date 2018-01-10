@@ -27,10 +27,18 @@ var LoginLayer = (function (_super) {
         this.btn_login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
     };
     LoginLayer.prototype.onLoginClick = function () {
-        //   LC.Tips.show("\u7528\u6237\u5728\u5176\u4ed6\u684c\u5b50\u4e2d");
-        // this._ctrl.sendDebugLoginReq(this.edit_name.text, this.edit_psw.text);
-        // LC.Tips.show(LC.ErrorCodeManager.Instance.getErrorCode(1001));
-        SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        var payInfo = {
+            goodsId: "1",
+            goodsNumber: "1",
+            serverId: "1",
+            ext: "",
+        };
+        console.log(payInfo);
+        nest.iap.pay(payInfo, this._onPayHandler.bind(this));
+    };
+    LoginLayer.prototype._onPayHandler = function (payInfo) {
+        console.log(payInfo);
     };
     return LoginLayer;
 }(Layer));
