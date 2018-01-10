@@ -60,7 +60,7 @@ var HallLayer = (function (_super) {
     HallLayer.prototype._onItemTap = function (event) {
         console.log(event.itemIndex);
         // let shop = new ShopLayer();
-        PopupManager.Instance.open(PopUpLayer[PopUpLayer.ShopLayer], false, EffectType.Violent);
+        PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], false, EffectType.Violent);
         // this.addChild(shop);
     };
     HallLayer.prototype._onBtnNewClick = function () {

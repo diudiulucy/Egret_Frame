@@ -36,6 +36,14 @@
     },
     {
       "name": "promise"
+    },
+    {
+      "name": "cryptoJS",
+      "path": "../libsrc/cryptoJS"
+    },
+    {
+      "name": "nest",
+      "path": "../libsrc/nest"
     }
   ]
 }

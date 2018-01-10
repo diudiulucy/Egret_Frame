@@ -9,9 +9,9 @@ for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
 /**
- * 弹框管理类
- * 打开弹框的特效
- *
+ * 面板弹出的管理类
+ * @author lucywang
+ * @date 2018/01/10
  */
 var EffectType;
 (function (EffectType) {
@@ -22,7 +22,9 @@ var EffectType;
 var PopupManager = (function (_super) {
     __extends(PopupManager, _super);
     function PopupManager() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this._popUpLayerList = {};
+        return _this;
     }
     Object.defineProperty(PopupManager, "Instance", {
         get: function () {
@@ -35,12 +37,15 @@ var PopupManager = (function (_super) {
     PopupManager.prototype.open = function (layerName, dark, effectType) {
         if (dark === void 0) { dark = false; }
         var scene = SceneManager.Instance.runningScene;
-        var cls = egret.getDefinitionByName(layerName);
-        var displayObject = new cls();
-        if (!displayObject && scene.contains(displayObject))
+        //判断当前场景是否包含此layer，包含则返回
+        if (scene.contains(this._popUpLayerList[layerName]))
             return;
-        scene.addChild(displayObject);
-        this._playEffect(displayObject, effectType);
+        //创建layer
+        var cls = egret.getDefinitionByName(layerName);
+        var layer = new cls();
+        scene.addChild(layer);
+        this._popUpLayerList[layerName] = layer;
+        this._playEffect(layer, effectType);
     };
     PopupManager.prototype._playEffect = function (element, type) {
         switch (type) {
@@ -60,9 +65,11 @@ var PopupManager = (function (_super) {
                 break;
         }
     };
-    PopupManager.prototype.close = function (displayObject, effectType) {
+    PopupManager.prototype.close = function (layerName, effectType) {
         var scene = SceneManager.Instance.runningScene;
-        var element = displayObject;
+        if (!layerName && !scene.contains(this._popUpLayerList[layerName]))
+            return;
+        var element = this._popUpLayerList[layerName];
         //以下是弹窗动画
         switch (effectType) {
             case 0:
@@ -92,8 +99,10 @@ var PopupManager = (function (_super) {
             waitTime = 0;
         }
         egret.setTimeout(function () {
-            if (displayObject && scene.contains(displayObject)) {
-                scene.removeChild(displayObject);
+            if (element && scene.contains(element)) {
+                scene.removeChild(element);
+                this._popUpLayerList[layerName] = null;
+                delete this._popUpLayerList[layerName];
             }
         }, this, waitTime);
     };

@@ -26,7 +26,8 @@ var ShopLayer = (function (_super) {
     ShopLayer.prototype.removeOnTouchListener = function () {
     };
     ShopLayer.prototype._onCloseClick = function () {
-        PopupManager.Instance.close(this, 1);
+        PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], 1);
+        // PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer],false, 1);
     };
     return ShopLayer;
 }(Layer));

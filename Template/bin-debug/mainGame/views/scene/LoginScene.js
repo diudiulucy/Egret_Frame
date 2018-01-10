@@ -18,6 +18,10 @@ var LoginScene = (function (_super) {
         this.loginLayer = new LoginLayer();
         this.addChild(this.loginLayer);
     };
+    LoginScene.prototype.onDestroy = function () {
+        _super.prototype.onDestroy.call(this);
+        this.loginLayer = null;
+    };
     return LoginScene;
 }(Scene));
 __reflect(LoginScene.prototype, "LoginScene");

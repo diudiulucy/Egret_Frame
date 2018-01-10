@@ -21,6 +21,7 @@ class ShopLayer extends Layer {
 
 	protected _onCloseClick() {
 	
-		PopupManager.Instance.close(this, 1);
+		PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], 1);
+		// PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer],false, 1);
 	}
 }

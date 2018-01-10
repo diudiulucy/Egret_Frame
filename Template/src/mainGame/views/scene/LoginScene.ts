@@ -1,5 +1,5 @@
 class LoginScene extends Scene {
-	public loginLayer: LoginLayer;
+	private loginLayer: LoginLayer;
 
 	public constructor() {
 		super();
@@ -10,5 +10,10 @@ class LoginScene extends Scene {
 
 		this.loginLayer = new LoginLayer();
 		this.addChild(this.loginLayer);
+	}
+
+	protected onDestroy(){
+		super.onDestroy();
+		this.loginLayer = null;
 	}
 }

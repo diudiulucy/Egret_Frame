@@ -10,7 +10,8 @@ enum EffectType {
 }
 
 class PopupManager extends Single {
-
+    private _popUpLayerList = {};
+    
     public static get Instance(): PopupManager {
         return this.getInstance();
     }
@@ -18,14 +19,16 @@ class PopupManager extends Single {
     /**打开窗口 */
     public open(layerName: string, dark: boolean = false, effectType: EffectType): void {
         let scene = SceneManager.Instance.runningScene;
-
+        //判断当前场景是否包含此layer，包含则返回
+        if (scene.contains(this._popUpLayerList[layerName])) return;
+        
+        //创建layer
         let cls = egret.getDefinitionByName(layerName);
-        let displayObject = new cls();
+        let layer = new cls();
+        scene.addChild(layer);
 
-        if (!displayObject && scene.contains(displayObject)) return;
-
-        scene.addChild(displayObject);
-        this._playEffect(displayObject, effectType);
+        this._popUpLayerList[layerName] = layer;
+        this._playEffect(layer, effectType);
     }
 
     private _playEffect(element: egret.DisplayObject, type: EffectType) {
@@ -48,10 +51,11 @@ class PopupManager extends Single {
     }
 
 
-    public close(displayObject: egret.DisplayObject, effectType: number): void {
+    public close(layerName: string,effectType: number): void {
         let scene = SceneManager.Instance.runningScene;
+        if(!layerName && !scene.contains(this._popUpLayerList[layerName])) return;
 
-        let element = displayObject;
+        let element = this._popUpLayerList[layerName];
         //以下是弹窗动画
         switch (effectType) {
             case 0:
@@ -83,8 +87,10 @@ class PopupManager extends Single {
         }
 
         egret.setTimeout(function () {
-            if (displayObject && scene.contains(displayObject)) {
-                scene.removeChild(displayObject);
+            if (element && scene.contains(element)) {
+                scene.removeChild(element);
+                this._popUpLayerList[layerName] = null;
+                delete this._popUpLayerList[layerName];
             }
 
         }, this, waitTime);
