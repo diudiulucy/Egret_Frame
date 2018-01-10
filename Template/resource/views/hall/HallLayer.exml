@@ -26,7 +26,7 @@
 	<e:ToggleButton id="virtuallayout" label="虚拟" x="1050" y="338" visible="false" />
 	<e:Label id="virtual" text="" x="1052" y="248" visible="false" />
 	<e:Button id="btn_new" label="更新数据" x="1064" y="220" visible="false" />
-	<e:Scroller width="660" height="370" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="191" verticalCenter="0">
+	<e:Scroller width="660" height="370" anchorOffsetX="0" anchorOffsetY="0" horizontalCenter="191" verticalCenter="10">
 		<e:List id="gameEntryList" itemRendererSkinName="skins.HallPlayItem">
 			<e:ArrayCollection>
 				<e:Array>
@@ -63,5 +63,6 @@
 		</e:List>
 		<e:Image source="left_png" height="100%"/>
 	</e:Group>
-	<ns1:Rank width="404" height="416" verticalCenter="0" left="40" skinName="skins.Rank"/>
+	<ns1:Rank width="404" height="416" verticalCenter="26" left="40" skinName="skins.Rank"/>
+	<e:Image source="logo_png" x="342" y="84"/>
 </e:Skin>

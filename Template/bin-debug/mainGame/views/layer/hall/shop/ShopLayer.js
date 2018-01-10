@@ -17,6 +17,9 @@ var ShopLayer = (function (_super) {
         _this.percentHeight = 100;
         return _this;
     }
+    ShopLayer.prototype.init = function () {
+        _super.prototype.init.call(this);
+    };
     ShopLayer.prototype.setOnTouchListener = function () {
         this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
     };

@@ -8,8 +8,11 @@ class ShopLayer extends Layer {
 		this.percentHeight = 100;
 	}
 
-	protected setOnTouchListener() {
+	protected init() {
+		super.init();
+	}
 
+	protected setOnTouchListener() {
 		this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
 	}
 

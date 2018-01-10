@@ -9,4 +9,8 @@ var SceneConst;
     SceneConst[SceneConst["HallScene"] = 1] = "HallScene";
     SceneConst[SceneConst["GameScene"] = 2] = "GameScene";
 })(SceneConst || (SceneConst = {}));
-//# sourceMappingURL=SceneConst.js.map
+var PopUpLayer;
+(function (PopUpLayer) {
+    PopUpLayer[PopUpLayer["ShopLayer"] = 0] = "ShopLayer";
+})(PopUpLayer || (PopUpLayer = {}));
+//# sourceMappingURL=ViewConst.js.map

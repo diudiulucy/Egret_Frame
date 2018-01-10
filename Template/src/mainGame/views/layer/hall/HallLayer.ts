@@ -115,8 +115,8 @@ class HallLayer extends Layer {
 
 	private _onItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
-		let shop = new ShopLayer();
-		PopupManager.Instance.open(shop, false, EffectType.Violent);
+		// let shop = new ShopLayer();
+		PopupManager.Instance.open(PopUpLayer[PopUpLayer.ShopLayer], false, EffectType.Violent);
 		// this.addChild(shop);
 	}
 

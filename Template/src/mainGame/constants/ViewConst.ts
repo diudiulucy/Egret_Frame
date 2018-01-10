@@ -9,3 +9,6 @@ enum SceneConst {
     GameScene,
 } 
 
+enum PopUpLayer {
+    ShopLayer,
+}

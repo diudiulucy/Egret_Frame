@@ -11,8 +11,8 @@
 	],
 	"game": [
 		"bin-debug/framework/core/Layer.js",
-		"bin-debug/framework/core/Single.js",
 		"bin-debug/framework/core/Scene.js",
+		"bin-debug/framework/core/Single.js",
 		"bin-debug/framework/ui/ScrollerList.js",
 		"bin-debug/framework/adapter/ThemeAdapter.js",
 		"bin-debug/Main.js",
@@ -20,8 +20,8 @@
 		"bin-debug/framework/manager/PopupManager.js",
 		"bin-debug/framework/manager/SceneManager.js",
 		"bin-debug/framework/platform/Platform.js",
-		"bin-debug/mainGame/views/scene/LoginScene.js",
-		"bin-debug/mainGame/constants/SceneConst.js",
+		"bin-debug/framework/adapter/AssetAdapter.js",
+		"bin-debug/mainGame/constants/ViewConst.js",
 		"bin-debug/mainGame/views/comp/HallMenu.js",
 		"bin-debug/mainGame/views/comp/Rank.js",
 		"bin-debug/mainGame/views/itemRender/PlayerStateItemRender.js",
@@ -30,6 +30,6 @@
 		"bin-debug/mainGame/views/layer/hall/shop/ShopLayer.js",
 		"bin-debug/mainGame/views/layer/login/LoginLayer.js",
 		"bin-debug/mainGame/views/scene/HallScene.js",
-		"bin-debug/framework/adapter/AssetAdapter.js"
+		"bin-debug/mainGame/views/scene/LoginScene.js"
 	]
 }
