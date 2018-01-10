@@ -46,9 +46,58 @@ var DebugPlatform = (function () {
             });
         });
     };
+    DebugPlatform.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var info;
+            return __generator(this, function (_a) {
+                console.log("start nest init");
+                info = {};
+                info.egretAppId = 88888;
+                info.version = 2;
+                info.debug = true;
+                nest.easyuser.startup(info, function (resultInfo) {
+                    if (resultInfo.result == 0) {
+                        platform.login();
+                    }
+                    else {
+                        console.log("nest init fail");
+                    }
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
     DebugPlatform.prototype.login = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var loginTypes, typeInfo;
             return __generator(this, function (_a) {
+                console.log("login start");
+                loginTypes = nest.easyuser.getLoginTypes();
+                if (loginTypes.length) {
+                    typeInfo = loginTypes[0];
+                    if (loginTypes.length == 1 && (typeInfo.loginType == "wx" || typeInfo.loginType == "qq")) {
+                        nest.easyuser.login(typeInfo, function (data) {
+                            if (data.result == 0) {
+                                console.log("log success");
+                            }
+                            else {
+                                console.log("log fail");
+                            }
+                        });
+                    }
+                }
+                else {
+                    nest.easyuser.login({}, function (data) {
+                        if (data.result == 0) {
+                            console.log("no need success");
+                            egret.log("log Success");
+                            // new Login().login(data);
+                        }
+                        else {
+                            egret.log("log Fail");
+                        }
+                    });
+                }
                 return [2 /*return*/];
             });
         });

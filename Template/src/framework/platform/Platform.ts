@@ -8,7 +8,10 @@ declare interface Platform {
 
     getUserInfo(): Promise<any>;
 
+    init(): Promise<any>;
+
     login(): Promise<any>
+
 
 }
 
@@ -16,9 +19,54 @@ class DebugPlatform implements Platform {
     async getUserInfo() {
         return { nickName: "username" }
     }
-    async login() {
 
+    async init() {
+        console.log("start nest init");
+        let info: any = {};
+        info.egretAppId = 88888;
+        info.version = 2;
+        info.debug = true;
+
+        nest.easyuser.startup(info, function (resultInfo: nest.core.ResultCallbackInfo) {
+            if (resultInfo.result == 0) {
+                platform.login();
+            } else {
+                console.log("nest init fail");
+            }
+        });
     }
+
+    async login() {
+        console.log("login start");
+        let loginTypes: Array<nest.easyuser.ILoginType> = nest.easyuser.getLoginTypes();
+        if (loginTypes.length) {
+            let typeInfo: nest.easyuser.ILoginType = loginTypes[0];
+            if (loginTypes.length == 1 && (typeInfo.loginType == "wx" || typeInfo.loginType == "qq")) {
+                nest.easyuser.login(typeInfo, function (data: nest.user.LoginCallbackInfo) {
+                    if (data.result == 0) {
+                        console.log("log success");
+                    } else {
+                        console.log("log fail");
+                    }
+                });
+            }
+        } 
+        else {//不需要登录按钮，直接调用登录进游戏
+            nest.easyuser.login({}, function (data: nest.user.LoginCallbackInfo) {
+                if (data.result == 0) {
+                    console.log("no need success");
+                    egret.log("log Success");
+                    // new Login().login(data);
+                }
+                else {
+                    egret.log("log Fail");
+                }
+            });
+        }
+    }
+
+
+
 }
 
 
