@@ -8,6 +8,11 @@ var __extends = this && this.__extends || function __extends(t, e) {
 for (var i in e) e.hasOwnProperty(i) && (t[i] = e[i]);
 r.prototype = e.prototype, t.prototype = new r();
 };
+/**
+ * 登录场景
+ * @author lucywang
+ * @date 2018/01/05
+ */
 var LoginScene = (function (_super) {
     __extends(LoginScene, _super);
     function LoginScene() {
