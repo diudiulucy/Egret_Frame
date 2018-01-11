@@ -59,9 +59,7 @@ var HallLayer = (function (_super) {
     };
     HallLayer.prototype._onItemTap = function (event) {
         console.log(event.itemIndex);
-        // let shop = new ShopLayer();
-        PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], false, EffectType.Violent);
-        // this.addChild(shop);
+        PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.DownUp);
     };
     HallLayer.prototype._onBtnNewClick = function () {
         // this.player.dataProvider = 

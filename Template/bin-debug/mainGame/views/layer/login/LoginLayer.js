@@ -27,15 +27,15 @@ var LoginLayer = (function (_super) {
         this.btn_login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
     };
     LoginLayer.prototype.onLoginClick = function () {
-        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
-        var payInfo = {
-            goodsId: "1",
-            goodsNumber: "1",
-            serverId: "1",
-            ext: "",
-        };
-        console.log(payInfo);
-        nest.iap.pay(payInfo, this._onPayHandler.bind(this));
+        SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        // let payInfo:nest.iap.PayInfo = {
+        //     goodsId:"1",
+        //     goodsNumber:"1",
+        //     serverId:"1",
+        //     ext:"",
+        // };
+        // console.log(payInfo);
+        // nest.iap.pay(payInfo,this._onPayHandler.bind(this));
     };
     LoginLayer.prototype._onPayHandler = function (payInfo) {
         console.log(payInfo);

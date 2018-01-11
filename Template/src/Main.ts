@@ -99,6 +99,10 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
+
+        SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
+
+
         // let scrollList: ScrollerList = new ScrollerList();
         // this.addChild(scrollList);
         // scrollList.width = 640;
@@ -116,7 +120,7 @@ class Main extends eui.UILayer {
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
 
-        SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
+        
 
         // let listPanel = new HallLayer();
         // this.addChild(listPanel);

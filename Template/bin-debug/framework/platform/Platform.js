@@ -48,6 +48,33 @@ var DebugPlatform = (function () {
     };
     DebugPlatform.prototype.init = function () {
         return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    DebugPlatform.prototype.login = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
+    return DebugPlatform;
+}());
+__reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
+var EgretPlatform = (function () {
+    function EgretPlatform() {
+    }
+    EgretPlatform.prototype.getUserInfo = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, { nickName: "username" }];
+            });
+        });
+    };
+    EgretPlatform.prototype.init = function () {
+        return __awaiter(this, void 0, void 0, function () {
             var info;
             return __generator(this, function (_a) {
                 console.log("start nest init");
@@ -67,7 +94,7 @@ var DebugPlatform = (function () {
             });
         });
     };
-    DebugPlatform.prototype.login = function () {
+    EgretPlatform.prototype.login = function () {
         return __awaiter(this, void 0, void 0, function () {
             var loginTypes, typeInfo;
             return __generator(this, function (_a) {
@@ -102,9 +129,9 @@ var DebugPlatform = (function () {
             });
         });
     };
-    return DebugPlatform;
+    return EgretPlatform;
 }());
-__reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
+__reflect(EgretPlatform.prototype, "EgretPlatform", ["Platform"]);
 if (!window.platform) {
     window.platform = new DebugPlatform();
 }

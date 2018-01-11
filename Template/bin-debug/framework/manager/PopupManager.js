@@ -18,6 +18,10 @@ var EffectType;
     EffectType[EffectType["None"] = 0] = "None";
     EffectType[EffectType["Slight"] = 1] = "Slight";
     EffectType[EffectType["Violent"] = 2] = "Violent";
+    EffectType[EffectType["LeftRigt"] = 3] = "LeftRigt";
+    EffectType[EffectType["RightLeft"] = 4] = "RightLeft";
+    EffectType[EffectType["UpDown"] = 5] = "UpDown";
+    EffectType[EffectType["DownUp"] = 6] = "DownUp"; //从上到下
 })(EffectType || (EffectType = {}));
 var PopupManager = (function (_super) {
     __extends(PopupManager, _super);
@@ -33,8 +37,12 @@ var PopupManager = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    /**打开窗口 */
-    PopupManager.prototype.open = function (layerName, dark, effectType) {
+    /**
+     * 打开窗口
+     *
+     */
+    PopupManager.prototype.open = function (layerName, effectType, dark) {
+        if (effectType === void 0) { effectType = EffectType.None; }
         if (dark === void 0) { dark = false; }
         var scene = SceneManager.Instance.runningScene;
         //判断当前场景是否包含此layer，包含则返回
@@ -45,12 +53,37 @@ var PopupManager = (function (_super) {
         var layer = new cls();
         scene.addChild(layer);
         this._popUpLayerList[layerName] = layer;
-        this._playEffect(layer, effectType);
+        effectType != EffectType.None && this._playOpenEffect(layer, effectType);
     };
-    PopupManager.prototype._playEffect = function (element, type) {
+    /**
+     * 关闭窗口
+     *
+     */
+    PopupManager.prototype.close = function (layerName, effectType) {
+        var scene = SceneManager.Instance.runningScene;
+        if (!layerName && !scene.contains(this._popUpLayerList[layerName]))
+            return;
+        var element = this._popUpLayerList[layerName];
+        var callback = function () {
+            if (element && scene.contains(element)) {
+                scene.removeChild(element);
+                this._popUpLayerList[layerName] = null;
+                delete this._popUpLayerList[layerName];
+            }
+        };
+        effectType != EffectType.None && this._playCloseEffect(element, effectType, callback);
+        var waitTime;
+        effectType == EffectType.None ? waitTime = 0 : waitTime = 500;
+        egret.setTimeout(function () {
+            if (element && scene.contains(element)) {
+                scene.removeChild(element);
+                this._popUpLayerList[layerName] = null;
+                delete this._popUpLayerList[layerName];
+            }
+        }, this, waitTime);
+    };
+    PopupManager.prototype._playOpenEffect = function (element, type) {
         switch (type) {
-            case EffectType.None:
-                break;
             case EffectType.Slight:
                 element.alpha = 0;
                 element.scaleX = 0.5;
@@ -63,48 +96,45 @@ var PopupManager = (function (_super) {
                 element.scaleY = 0.5;
                 egret.Tween.get(element).to({ alpha: 1, scaleX: 1, scaleY: 1 }, 600, egret.Ease.elasticOut);
                 break;
+            case EffectType.LeftRigt:
+                element.x = -egret.MainContext.instance.stage.width;
+                egret.Tween.get(element).to({ x: 0 }, 500, egret.Ease.cubicOut);
+                break;
+            case EffectType.RightLeft:
+                element.x = egret.MainContext.instance.stage.width;
+                egret.Tween.get(element).to({ x: 0 }, 500, egret.Ease.cubicOut);
+                break;
+            case EffectType.UpDown:
+                element.y = -egret.MainContext.instance.stage.height;
+                egret.Tween.get(element).to({ y: 0 }, 500, egret.Ease.cubicOut);
+                break;
+            case EffectType.DownUp:
+                element.y = egret.MainContext.instance.stage.height;
+                egret.Tween.get(element).to({ y: 0 }, 500, egret.Ease.cubicOut);
+                break;
         }
     };
-    PopupManager.prototype.close = function (layerName, effectType) {
-        var scene = SceneManager.Instance.runningScene;
-        if (!layerName && !scene.contains(this._popUpLayerList[layerName]))
-            return;
-        var element = this._popUpLayerList[layerName];
-        //以下是弹窗动画
-        switch (effectType) {
-            case 0:
+    PopupManager.prototype._playCloseEffect = function (element, type, callback) {
+        switch (type) {
+            case EffectType.Slight:
+                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0 }, 500, egret.Ease.backOut);
                 break;
-            case 1:
-                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0, x: element.x + element.width / 2, y: element.y + element.height / 2 }, 300);
+            case EffectType.Violent:
+                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0 }, 300, egret.Ease.elasticOut);
                 break;
-            case 2:
-                break;
-            case 3:
+            case EffectType.LeftRigt:
                 egret.Tween.get(element).to({ x: element.width }, 500, egret.Ease.cubicOut);
                 break;
-            case 4:
+            case EffectType.RightLeft:
                 egret.Tween.get(element).to({ x: -element.width }, 500, egret.Ease.cubicOut);
                 break;
-            case 5:
+            case EffectType.UpDown:
                 egret.Tween.get(element).to({ y: element.height }, 500, egret.Ease.cubicOut);
                 break;
-            case 6:
+            case EffectType.DownUp:
                 egret.Tween.get(element).to({ y: -element.height }, 500, egret.Ease.cubicOut);
                 break;
-            default:
-                break;
         }
-        var waitTime = 500;
-        if (effectType == 0) {
-            waitTime = 0;
-        }
-        egret.setTimeout(function () {
-            if (element && scene.contains(element)) {
-                scene.removeChild(element);
-                this._popUpLayerList[layerName] = null;
-                delete this._popUpLayerList[layerName];
-            }
-        }, this, waitTime);
     };
     return PopupManager;
 }(Single));

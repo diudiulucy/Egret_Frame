@@ -165,6 +165,7 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // let scrollList: ScrollerList = new ScrollerList();
         // this.addChild(scrollList);
         // scrollList.width = 640;
@@ -181,7 +182,6 @@ var Main = (function (_super) {
         // ];
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
-        SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // let listPanel = new HallLayer();
         // this.addChild(listPanel);
         // let tarbar:eui.TabBar = new eui.TabBar();

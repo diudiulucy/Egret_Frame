@@ -21,6 +21,21 @@ class DebugPlatform implements Platform {
     }
 
     async init() {
+
+    }
+
+    async login() {
+       
+    }
+}
+
+
+class EgretPlatform implements Platform {
+    async getUserInfo() {
+        return { nickName: "username" }
+    }
+
+    async init() {
         console.log("start nest init");
         let info: any = {};
         info.egretAppId = 88888;
@@ -64,10 +79,9 @@ class DebugPlatform implements Platform {
             });
         }
     }
-
-
-
 }
+
+
 
 
 if (!window.platform) {
