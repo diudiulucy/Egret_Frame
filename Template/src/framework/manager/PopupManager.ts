@@ -15,6 +15,7 @@ enum EffectType {
 
 class PopupManager extends Single {
     private _popUpLayerList = {};
+    private _darkBg: egret.Sprite;
 
     public static get Instance(): PopupManager {
         return this.getInstance();
@@ -33,8 +34,10 @@ class PopupManager extends Single {
         let cls = egret.getDefinitionByName(layerName);
         let layer = new cls();
         scene.addChild(layer);
-
         this._popUpLayerList[layerName] = layer;
+
+
+        dark && this._createDarkBg(layer);
 
         effectType != EffectType.None && this._playOpenEffect(layer, effectType);
     }
@@ -47,8 +50,6 @@ class PopupManager extends Single {
         let scene = SceneManager.Instance.runningScene;
         if (!layerName && !scene.contains(this._popUpLayerList[layerName])) return;
 
-        let element = this._popUpLayerList[layerName];
-
         let callback = function () {
             if (element && scene.contains(element)) {
                 scene.removeChild(element);
@@ -57,23 +58,31 @@ class PopupManager extends Single {
             }
         }
 
-        effectType != EffectType.None && this._playCloseEffect(element, effectType,callback);
-
-        let waitTime;
-        effectType == EffectType.None ? waitTime = 0 : waitTime = 500;
-
-        egret.setTimeout(function () {
-            if (element && scene.contains(element)) {
-                scene.removeChild(element);
-                this._popUpLayerList[layerName] = null;
-                delete this._popUpLayerList[layerName];
-            }
-
-        }, this, waitTime);
+        let element = this._popUpLayerList[layerName];
+        this._playCloseEffect(element, effectType, callback);
     }
 
+    private _createDarkBg(layer: egret.DisplayObjectContainer) {
+        let width = egret.MainContext.instance.stage.width;
+        let height = egret.MainContext.instance.stage.height;
+        this._darkBg = new egret.Sprite();
+        this._darkBg.graphics.clear();
+        this._darkBg.graphics.beginFill(0x000000, 0.6);
+        this._darkBg.graphics.drawRect(0, 0, width, height);
+        this._darkBg.graphics.endFill();
+        this._darkBg.width = width;
+        this._darkBg.height = height;
+        this._darkBg.visible = true;
+        if (!layer.contains(this._darkBg)) {
+            layer.addChildAt(this._darkBg, 0);
+        }
+        this._darkBg.touchEnabled = true;
 
-    private _playOpenEffect(element: egret.DisplayObject, type: EffectType) {
+        egret.Tween.get(this._darkBg).to({ alpha: 1 }, 150);
+
+    }
+
+    private _playOpenEffect(element: egret.DisplayObjectContainer, type: EffectType) {
         switch (type) {
             case EffectType.Slight:
                 element.alpha = 0;
@@ -106,25 +115,37 @@ class PopupManager extends Single {
         }
     }
 
-    private _playCloseEffect(element: egret.DisplayObject, type: EffectType, callback: Function) {
+    private _playCloseEffect(element: egret.DisplayObjectContainer, type: EffectType, callback: Function) {
+        let onComplete: Function = function () {
+            if (element.contains(this.darkSprite)) {
+                element.removeChild(this.darkSprite);
+            }
+        };
+        if (this._darkBg) {
+            egret.Tween.get(this._darkBg).to({ alpha: 0 }, 100).call(onComplete, this);
+        }
+
         switch (type) {
+            case EffectType.None:
+                callback.call(this);
+                break;
             case EffectType.Slight:
-                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0 }, 500, egret.Ease.backOut);
+                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0 }, 500, egret.Ease.backOut).call(callback, this);
                 break;
             case EffectType.Violent:
-                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0 }, 300, egret.Ease.elasticOut);
+                egret.Tween.get(element).to({ alpha: 0, scaleX: 0, scaleY: 0 }, 300, egret.Ease.elasticOut).call(callback, this);
                 break;
             case EffectType.LeftRigt:
-                egret.Tween.get(element).to({ x: element.width }, 500, egret.Ease.cubicOut);
+                egret.Tween.get(element).to({ x: element.width }, 500, egret.Ease.cubicOut).call(callback, this);
                 break;
             case EffectType.RightLeft:
-                egret.Tween.get(element).to({ x: -element.width }, 500, egret.Ease.cubicOut);
+                egret.Tween.get(element).to({ x: -element.width }, 500, egret.Ease.cubicOut).call(callback, this);
                 break;
             case EffectType.UpDown:
-                egret.Tween.get(element).to({ y: element.height }, 500, egret.Ease.cubicOut);
+                egret.Tween.get(element).to({ y: element.height }, 500, egret.Ease.cubicOut).call(callback, this);
                 break;
             case EffectType.DownUp:
-                egret.Tween.get(element).to({ y: -element.height }, 500, egret.Ease.cubicOut);
+                egret.Tween.get(element).to({ y: -element.height }, 500, egret.Ease.cubicOut).call(callback, this);
                 break;
         }
     }
