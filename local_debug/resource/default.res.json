@@ -1,0 +1,335 @@
+{
+	"groups": [
+		{
+			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,rich_png,rich_selected_png,plebs_png,plebs_selected_png,betGod_png,betGod_selected_png,newBie_png,newBie_selected_png,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png",
+			"name": "preload"
+		}
+	],
+	"resources": [
+		{
+			"url": "config/description.json",
+			"type": "json",
+			"name": "description_json"
+		},
+		{
+			"url": "assets/egret/Button/button_down.png",
+			"type": "image",
+			"name": "button_down_png"
+		},
+		{
+			"url": "assets/egret/Button/button_up.png",
+			"type": "image",
+			"name": "button_up_png"
+		},
+		{
+			"url": "assets/egret/CheckBox/checkbox_select_disabled.png",
+			"type": "image",
+			"name": "checkbox_select_disabled_png"
+		},
+		{
+			"url": "assets/egret/CheckBox/checkbox_select_down.png",
+			"type": "image",
+			"name": "checkbox_select_down_png"
+		},
+		{
+			"url": "assets/egret/CheckBox/checkbox_select_up.png",
+			"type": "image",
+			"name": "checkbox_select_up_png"
+		},
+		{
+			"url": "assets/egret/CheckBox/checkbox_unselect.png",
+			"type": "image",
+			"name": "checkbox_unselect_png"
+		},
+		{
+			"url": "assets/egret/bg.jpg",
+			"type": "image",
+			"name": "bg_jpg"
+		},
+		{
+			"url": "assets/egret/egret_icon.png",
+			"type": "image",
+			"name": "egret_icon_png"
+		},
+		{
+			"url": "assets/egret/ItemRenderer/selected.png",
+			"type": "image",
+			"name": "selected_png"
+		},
+		{
+			"url": "assets/egret/Panel/border.png",
+			"type": "image",
+			"name": "border_png"
+		},
+		{
+			"url": "assets/egret/Panel/header.png",
+			"type": "image",
+			"name": "header_png"
+		},
+		{
+			"url": "assets/egret/ProgressBar/thumb_pb.png",
+			"type": "image",
+			"name": "thumb_pb_png"
+		},
+		{
+			"url": "assets/egret/ProgressBar/track_pb.png",
+			"type": "image",
+			"name": "track_pb_png"
+		},
+		{
+			"url": "assets/egret/RadioButton/radiobutton_select_disabled.png",
+			"type": "image",
+			"name": "radiobutton_select_disabled_png"
+		},
+		{
+			"url": "assets/egret/RadioButton/radiobutton_select_down.png",
+			"type": "image",
+			"name": "radiobutton_select_down_png"
+		},
+		{
+			"url": "assets/egret/RadioButton/radiobutton_select_up.png",
+			"type": "image",
+			"name": "radiobutton_select_up_png"
+		},
+		{
+			"url": "assets/egret/RadioButton/radiobutton_unselect.png",
+			"type": "image",
+			"name": "radiobutton_unselect_png"
+		},
+		{
+			"url": "assets/egret/ScrollBar/roundthumb.png",
+			"type": "image",
+			"name": "roundthumb_png"
+		},
+		{
+			"url": "assets/egret/ScrollBar/track_sb.png",
+			"type": "image",
+			"name": "track_sb_png"
+		},
+		{
+			"url": "assets/egret/Slider/thumb.png",
+			"type": "image",
+			"name": "thumb_png"
+		},
+		{
+			"url": "assets/egret/Slider/track.png",
+			"type": "image",
+			"name": "track_png"
+		},
+		{
+			"url": "assets/egret/Slider/tracklight.png",
+			"type": "image",
+			"name": "tracklight_png"
+		},
+		{
+			"url": "assets/egret/ToggleSwitch/handle.png",
+			"type": "image",
+			"name": "handle_png"
+		},
+		{
+			"url": "assets/egret/ToggleSwitch/off.png",
+			"type": "image",
+			"name": "off_png"
+		},
+		{
+			"url": "assets/egret/ToggleSwitch/on.png",
+			"type": "image",
+			"name": "on_png"
+		},
+		{
+			"url": "assets/commom/tab.png",
+			"type": "image",
+			"name": "tab_png"
+		},
+		{
+			"url": "assets/bg/hall_bg.jpg",
+			"type": "image",
+			"name": "hall_bg_jpg"
+		},
+		{
+			"url": "assets/hall/rich.png",
+			"type": "image",
+			"name": "rich_png"
+		},
+		{
+			"url": "assets/hall/rich_selected.png",
+			"type": "image",
+			"name": "rich_selected_png"
+		},
+		{
+			"url": "assets/hall/plebs.png",
+			"type": "image",
+			"name": "plebs_png"
+		},
+		{
+			"url": "assets/hall/plebs_selected.png",
+			"type": "image",
+			"name": "plebs_selected_png"
+		},
+		{
+			"url": "assets/hall/betGod.png",
+			"type": "image",
+			"name": "betGod_png"
+		},
+		{
+			"url": "assets/hall/betGod_selected.png",
+			"type": "image",
+			"name": "betGod_selected_png"
+		},
+		{
+			"url": "assets/hall/newBie.png",
+			"type": "image",
+			"name": "newBie_png"
+		},
+		{
+			"url": "assets/hall/newBie_selected.png",
+			"type": "image",
+			"name": "newBie_selected_png"
+		},
+		{
+			"url": "assets/hall/menu/feedback.png",
+			"type": "image",
+			"name": "feedback_png"
+		},
+		{
+			"url": "assets/hall/menu/share.png",
+			"type": "image",
+			"name": "share_png"
+		},
+		{
+			"url": "assets/hall/menu/benifit.png",
+			"type": "image",
+			"name": "benifit_png"
+		},
+		{
+			"url": "assets/hall/menu/shop.png",
+			"type": "image",
+			"name": "shop_png"
+		},
+		{
+			"url": "assets/hall/menu/settings.png",
+			"type": "image",
+			"name": "settings_png"
+		},
+		{
+			"url": "assets/hall/menu/play.png",
+			"type": "image",
+			"name": "play_png"
+		},
+		{
+			"url": "assets/hall/menu/mail.png",
+			"type": "image",
+			"name": "mail_png"
+		},
+		{
+			"url": "assets/hall/menu/menu_bg.png",
+			"type": "image",
+			"name": "menu_bg_png"
+		},
+		{
+			"url": "assets/hall/menu/left.png",
+			"type": "image",
+			"name": "left_png"
+		},
+		{
+			"url": "assets/hall/rank/rank_bg.png",
+			"type": "image",
+			"name": "rank_bg_png"
+		},
+		{
+			"url": "assets/hall/head/head_01.png",
+			"type": "image",
+			"name": "head_01_png"
+		},
+		{
+			"url": "assets/bmfont/green.png",
+			"type": "image",
+			"name": "green_png"
+		},
+		{
+			"url": "assets/bmfont/green.fnt",
+			"type": "font",
+			"name": "green_fnt"
+		},
+		{
+			"url": "assets/hall/shop/bg.png",
+			"type": "image",
+			"name": "bg_png"
+		},
+		{
+			"url": "assets/hall/shop/close.png",
+			"type": "image",
+			"name": "close_png"
+		},
+		{
+			"url": "assets/hall/shop/coin.png",
+			"type": "image",
+			"name": "coin_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_01.png",
+			"type": "image",
+			"name": "diamond_01_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_02.png",
+			"type": "image",
+			"name": "diamond_02_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_03.png",
+			"type": "image",
+			"name": "diamond_03_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_04.png",
+			"type": "image",
+			"name": "diamond_04_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_05.png",
+			"type": "image",
+			"name": "diamond_05_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_06.png",
+			"type": "image",
+			"name": "diamond_06_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_07.png",
+			"type": "image",
+			"name": "diamond_07_png"
+		},
+		{
+			"url": "assets/hall/shop/diamond_08.png",
+			"type": "image",
+			"name": "diamond_08_png"
+		},
+		{
+			"url": "assets/hall/shop/itembg.png",
+			"type": "image",
+			"name": "itembg_png"
+		},
+		{
+			"url": "assets/hall/shop/shop_title.png",
+			"type": "image",
+			"name": "shop_title_png"
+		},
+		{
+			"name": "PreLoadingBg_png",
+			"type": "image",
+			"url": "assets/bg/PreLoadingBg.png"
+		},
+		{
+			"name": "back_png",
+			"type": "image",
+			"url": "assets/commom/back.png"
+		},
+		{
+			"name": "logo_png",
+			"type": "image",
+			"url": "assets/hall/logo.png"
+		}
+	]
+}
