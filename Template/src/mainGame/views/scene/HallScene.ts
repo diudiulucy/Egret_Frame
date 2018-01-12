@@ -14,4 +14,8 @@ class HallScene extends Scene {
 		this.addChild(hallLayer);
 	}
 
+	public onEnterAnimation(){
+		 egret.Tween.get(this).to({x:this.stage.width}, 0).to({x:0 }, 600, egret.Ease.cubicOut);
+	}
+
 }

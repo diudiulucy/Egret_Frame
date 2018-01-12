@@ -15,4 +15,8 @@ class LoginScene extends Scene {
 		let loginLayer = new LoginLayer();
 		this.addChild(loginLayer);
 	}
+
+	public onExitAnimation(){
+		egret.Tween.get(this).wait(300).to({x:this.stage.width }, 600, egret.Ease.cubicOut);
+	}
 }

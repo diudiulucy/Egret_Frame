@@ -86,9 +86,9 @@ var SceneManager = (function (_super) {
     SceneManager.prototype._setNextScene = function () {
         egret.MainContext.instance.stage.addChild(this._nextScene);
         if (this._runningScene) {
-            this._runningScene.onExitTransitionDidStart();
+            this._runningScene.onExitAnimation();
         }
-        this._nextScene.onEnterTransitionDidFinish();
+        this._nextScene.onEnterAnimation();
         if (this._sendCleanupToScene && this._runningScene) {
             this._runningScene.parent.removeChild(this._runningScene);
         }

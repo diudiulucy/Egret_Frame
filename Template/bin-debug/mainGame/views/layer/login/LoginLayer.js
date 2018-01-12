@@ -28,17 +28,6 @@ var LoginLayer = (function (_super) {
     };
     LoginLayer.prototype.onLoginClick = function () {
         SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
-        // let payInfo:nest.iap.PayInfo = {
-        //     goodsId:"1",
-        //     goodsNumber:"1",
-        //     serverId:"1",
-        //     ext:"",
-        // };
-        // console.log(payInfo);
-        // nest.iap.pay(payInfo,this._onPayHandler.bind(this));
-    };
-    LoginLayer.prototype._onPayHandler = function (payInfo) {
-        console.log(payInfo);
     };
     return LoginLayer;
 }(Layer));

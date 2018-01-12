@@ -52,14 +52,6 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
-declare module Skin{
-	class Hall extends eui.Skin{
-	}
-}
-declare module skins{
-	class Rank extends eui.Skin{
-	}
-}
 declare module skins{
 	class HallMenuItem extends eui.Skin{
 	}
@@ -82,6 +74,14 @@ declare class testRender extends eui.Skin{
 }
 declare module Skin{
 	class LoginLayer extends eui.Skin{
+	}
+}
+declare module Skin{
+	class Hall extends eui.Skin{
+	}
+}
+declare module skins{
+	class Rank extends eui.Skin{
 	}
 }
 declare module skins{

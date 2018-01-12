@@ -24,22 +24,6 @@ class LoginLayer extends Layer {
     }
 
     private onLoginClick() {
-      
         SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
-
-        // let payInfo:nest.iap.PayInfo = {
-        //     goodsId:"1",
-        //     goodsNumber:"1",
-        //     serverId:"1",
-        //     ext:"",
-        // };
-        // console.log(payInfo);
-        // nest.iap.pay(payInfo,this._onPayHandler.bind(this));
     }
-
-    private _onPayHandler(payInfo:nest.iap.PayCallbackInfo):void{
-        console.log(payInfo);
-    }
-
-
 }

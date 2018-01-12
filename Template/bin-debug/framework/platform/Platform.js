@@ -60,6 +60,13 @@ var DebugPlatform = (function () {
             });
         });
     };
+    DebugPlatform.prototype.pay = function (goodsId) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/];
+            });
+        });
+    };
     return DebugPlatform;
 }());
 __reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
@@ -116,9 +123,17 @@ var EgretPlatform = (function () {
                 else {
                     nest.easyuser.login({}, function (data) {
                         if (data.result == 0) {
-                            console.log("no need success");
+                            console.log("no need loginBtn success");
                             egret.log("log Success");
-                            // new Login().login(data);
+                            var param = JSON.stringify({ token: data.token });
+                            Http.post("http://47.104.85.224:3000/user/login/egret/", param, function (e) {
+                                var request = e.currentTarget;
+                                var data = JSON.parse(request.response);
+                                if (data.code == "200") {
+                                    SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+                                }
+                                console.log("post data : ", request.response);
+                            }, this);
                         }
                         else {
                             egret.log("log Fail");
@@ -129,10 +144,29 @@ var EgretPlatform = (function () {
             });
         });
     };
+    EgretPlatform.prototype.pay = function (goodsId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var payInfo;
+            return __generator(this, function (_a) {
+                payInfo = {
+                    goodsId: goodsId,
+                    goodsNumber: "1",
+                    serverId: "1",
+                    ext: "",
+                };
+                console.log(payInfo);
+                nest.iap.pay(payInfo, this._onPayHandler.bind(this));
+                return [2 /*return*/];
+            });
+        });
+    };
+    EgretPlatform.prototype._onPayHandler = function (payInfo) {
+        console.log(payInfo);
+    };
     return EgretPlatform;
 }());
 __reflect(EgretPlatform.prototype, "EgretPlatform", ["Platform"]);
 if (!window.platform) {
-    window.platform = new DebugPlatform();
+    window.platform = new EgretPlatform();
 }
 //# sourceMappingURL=Platform.js.map

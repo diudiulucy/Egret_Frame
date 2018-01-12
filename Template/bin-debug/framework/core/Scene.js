@@ -42,14 +42,13 @@ var Scene = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    // 进入层而且过渡动画结束时调用           
-    Scene.prototype.onEnterTransitionDidFinish = function () {
-        // console.log(this.TAG + " onEnterTransitionDidFinish");
-        // egret.Tween.get(this).to({x:this.stage.width*1.5 }, 0, egret.Ease.backInOut).to({x:0 }, 600, egret.Ease.sineInOut);
+    // 进入层动画       
+    Scene.prototype.onEnterAnimation = function () {
+        console.log(this.TAG + " onEnterAnimation");
     };
-    // 退出层而且开始过渡动画完成时调用       
-    Scene.prototype.onExitTransitionDidStart = function () {
-        // console.log(this.TAG + " onExitTransitionDidStart");
+    // 退出层动画完  
+    Scene.prototype.onExitAnimation = function () {
+        console.log(this.TAG + " onExitAnimation");
         // egret.Tween.get(this).to({x:-this.stage.width}, 0, egret.Ease.backInOut);
     };
     Scene.prototype.onDestroy = function () {
