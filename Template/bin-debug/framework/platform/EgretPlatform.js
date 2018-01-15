@@ -44,7 +44,13 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 var EgretPlatform = (function () {
     function EgretPlatform() {
+        this._appKey = "vfgYd3UV8hyKPRAwvw8nH";
+        this._appId = 92068;
         this._Authorization = "ZW1tLWx1b3lhbnBpbmcteW91Y2FuZ3Vlc3N0aGlzLTE3NTA3";
+        this._goodsNumber = "1";
+        this._ext = "";
+        this._serverId = "1";
+        this.intervalDuration = 1000;
     }
     EgretPlatform.prototype.getUserInfo = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -59,7 +65,7 @@ var EgretPlatform = (function () {
             return __generator(this, function (_a) {
                 console.log("start nest init");
                 info = {};
-                info.egretAppId = 88888;
+                info.egretAppId = this._appId;
                 info.version = 2;
                 info.debug = true;
                 nest.easyuser.startup(info, function (resultInfo) {
@@ -93,6 +99,9 @@ var EgretPlatform = (function () {
             });
         });
     };
+    /**
+     * 下订单
+     */
     EgretPlatform.prototype.payOrder = function (gid) {
         return __awaiter(this, void 0, void 0, function () {
             var param;
@@ -110,9 +119,9 @@ var EgretPlatform = (function () {
             return __generator(this, function (_a) {
                 payInfo = {
                     goodsId: goodsId,
-                    goodsNumber: "1",
-                    serverId: "1",
-                    ext: "",
+                    goodsNumber: this._goodsNumber,
+                    serverId: this._serverId,
+                    ext: this._ext,
                 };
                 console.log(payInfo);
                 nest.iap.pay(payInfo, this._onPayHandler.bind(this));
@@ -127,9 +136,9 @@ var EgretPlatform = (function () {
             Http.post("http://47.104.85.224:3000/user/login/egret/", param, function (e) {
                 var request = e.currentTarget;
                 var data = JSON.parse(request.response);
-                console.log("return data : ", request.response);
+                console.log("_onLoginHandler : ", data);
                 if (data.code == "200") {
-                    SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+                    // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
                 }
             }, this);
         }
@@ -143,9 +152,12 @@ var EgretPlatform = (function () {
     EgretPlatform.prototype.payOrderHandler = function (e) {
         var request = e.currentTarget;
         var result = JSON.parse(request.response);
-        console.log("return data : ", request.response);
+        console.log("return payOrderHandler : ", result);
+        var data = result.data;
         if (result.code == "200") {
-            //下单
+            //唤起支付
+            this._orderId = data.order_id;
+            console.log("订单号：", this._orderId);
             platform.pay(result.data.product_id);
         }
     };
@@ -153,29 +165,40 @@ var EgretPlatform = (function () {
         console.log(payInfo);
         if (payInfo.result == 0) {
             //支付成功，通知发货
-            var param = {
-                orderId: "",
-                id: "",
-                money: "",
-                time: "",
-                serverId: "",
-                goodsId: "",
-                goodsNumber: "",
-                ext: "",
-                sign: ""
-            };
-            var strParam = JSON.stringify(param);
-            Http.post("http://47.104.85.224:3000/payment/egret/notify/", strParam, function (e) {
-                var request = e.currentTarget;
-                var data = JSON.parse(request.response);
-                if (data.code == "200") {
-                }
-                console.log("post data : ", request.response);
-            }, this);
+            this._intervalId = egret.setInterval(this._checkOrderHandler, this, this.intervalDuration);
         }
         else if (payInfo.result == -1) {
             //支付取消
         }
+    };
+    /**
+     * 查询订单是否支付成功
+     */
+    EgretPlatform.prototype._checkOrderHandler = function () {
+        var _this = this;
+        var param = JSON.stringify({ order_id: this._orderId, Authorization: this._Authorization });
+        Http.post("http://47.104.85.224:3000/user/pay/status/ ", param, function (e) {
+            var request = e.currentTarget;
+            var data = JSON.parse(request.response);
+            console.log("_checkOrderHandler : ", data);
+            if (data.code == "200") {
+                egret.clearInterval(_this._intervalId);
+                _this._RefreshUserData();
+            }
+        }, this);
+    };
+    /**
+     *  刷新用户数据
+     */
+    EgretPlatform.prototype._RefreshUserData = function () {
+        var param = JSON.stringify({ Authorization: this._Authorization });
+        Http.post("http://47.104.85.224:3000/user/pay/status/ ", param, function (e) {
+            var request = e.currentTarget;
+            var data = JSON.parse(request.response);
+            console.log("_RefreshUserData : ", data);
+            if (data.code == "200") {
+            }
+        }, this);
     };
     return EgretPlatform;
 }());

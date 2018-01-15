@@ -6,7 +6,15 @@
  */
 
 class EgretPlatform implements Platform {
+    private _appKey = "vfgYd3UV8hyKPRAwvw8nH";
+    private _appId = 92068;
     private _Authorization: string = "ZW1tLWx1b3lhbnBpbmcteW91Y2FuZ3Vlc3N0aGlzLTE3NTA3";
+    private _goodsNumber: string = "1";
+    private _ext: string = "";
+    private _serverId: string = "1";
+    private intervalDuration = 1000;
+    private _orderId;
+    private _intervalId: number;
     async getUserInfo() {
         return { nickName: "username" }
     }
@@ -14,7 +22,7 @@ class EgretPlatform implements Platform {
     async init() {
         console.log("start nest init");
         let info: any = {};
-        info.egretAppId = 88888;
+        info.egretAppId = this._appId;
         info.version = 2;
         info.debug = true;
 
@@ -41,6 +49,9 @@ class EgretPlatform implements Platform {
         }
     }
 
+    /**
+     * 下订单
+     */
     async payOrder(gid) {
         let param = JSON.stringify({ gid: gid, Authorization: this._Authorization });
         Http.post("http://47.104.85.224:3000/shop/gift/buy/", param, this.payOrderHandler, this);
@@ -49,9 +60,9 @@ class EgretPlatform implements Platform {
     async pay(goodsId) {
         let payInfo: nest.iap.PayInfo = {
             goodsId: goodsId,
-            goodsNumber: "1",
-            serverId: "1",
-            ext: "",
+            goodsNumber: this._goodsNumber,
+            serverId: this._serverId,
+            ext: this._ext,
         };
         console.log(payInfo);
         nest.iap.pay(payInfo, this._onPayHandler.bind(this));
@@ -64,9 +75,9 @@ class EgretPlatform implements Platform {
             Http.post("http://47.104.85.224:3000/user/login/egret/", param, (e) => {
                 var request = e.currentTarget;
                 let data = JSON.parse(request.response);
-                console.log("return data : ", request.response);
+                console.log("_onLoginHandler : ", data);
                 if (data.code == "200") {
-                    SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+                    // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
                 }
             }, this);
         }
@@ -75,15 +86,19 @@ class EgretPlatform implements Platform {
         }
     }
 
+
 	/**
 	 * 下订单回调
 	 */
     private payOrderHandler(e) {
         var request = e.currentTarget;
         let result = JSON.parse(request.response);
-        console.log("return data : ", request.response);
+        console.log("return payOrderHandler : ", result);
+        let data = result.data;
         if (result.code == "200") {
-            //下单
+            //唤起支付
+            this._orderId = data.order_id;
+            console.log("订单号：",this._orderId)
             platform.pay(result.data.product_id);
         }
 
@@ -93,30 +108,43 @@ class EgretPlatform implements Platform {
         console.log(payInfo);
         if (payInfo.result == 0) {
             //支付成功，通知发货
-            let param = {
-                orderId: "",
-                id: "",
-                money: "",
-                time: "",
-                serverId: "",
-                goodsId: "",
-                goodsNumber: "",
-                ext: "",
-                sign: ""
-            }
-
-            let strParam = JSON.stringify(param);
-            Http.post("http://47.104.85.224:3000/payment/egret/notify/", strParam, (e) => {
-                var request = e.currentTarget;
-                let data = JSON.parse(request.response);
-                if (data.code == "200") {
-
-                }
-                console.log("post data : ", request.response);
-            }, this);
+            this._intervalId = egret.setInterval(this._checkOrderHandler, this, this.intervalDuration);
         }
         else if (payInfo.result == -1) {
             //支付取消
         }
     }
+
+    /**
+     * 查询订单是否支付成功
+     */
+    private _checkOrderHandler() {
+        let param = JSON.stringify({ order_id: this._orderId, Authorization: this._Authorization });
+        Http.post("http://47.104.85.224:3000/user/pay/status/ ", param, (e) => {
+            var request = e.currentTarget;
+            let data = JSON.parse(request.response);
+            console.log("_checkOrderHandler : ", data);
+            if (data.code == "200") {
+                egret.clearInterval(this._intervalId);
+                this._RefreshUserData();
+            }
+        }, this);
+    }
+
+    /**
+     *  刷新用户数据
+     */
+    private _RefreshUserData() {
+        let param = JSON.stringify({ Authorization: this._Authorization });
+        Http.post("http://47.104.85.224:3000/user/pay/status/ ", param, (e) => {
+            var request = e.currentTarget;
+            let data = JSON.parse(request.response);
+            console.log("_RefreshUserData : ", data);
+            if (data.code == "200") {
+
+            }
+        }, this);
+    }
+
+
 }

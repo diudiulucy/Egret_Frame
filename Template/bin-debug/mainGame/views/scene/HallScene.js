@@ -23,7 +23,7 @@ var HallScene = (function (_super) {
         this.addChild(hallLayer);
     };
     HallScene.prototype.onEnterAnimation = function () {
-        egret.Tween.get(this).to({ x: this.stage.width }, 0).to({ x: 0 }, 600, egret.Ease.cubicOut);
+        //  egret.Tween.get(this).to({x:this.stage.width}, 0).to({x:0 }, 600, egret.Ease.cubicOut);
     };
     return HallScene;
 }(Scene));

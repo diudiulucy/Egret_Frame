@@ -102,7 +102,7 @@ class Main extends eui.UILayer {
 
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
 
-
+  
         // let scrollList: ScrollerList = new ScrollerList();
         // this.addChild(scrollList);
         // scrollList.width = 640;
@@ -120,7 +120,7 @@ class Main extends eui.UILayer {
         // scrollList.itemRendererSkinName = "testRender";
         // scrollList.dataProvider = new eui.ArrayCollection(itemArray);
 
-        
+
 
         // let listPanel = new HallLayer();
         // this.addChild(listPanel);
@@ -147,5 +147,7 @@ class Main extends eui.UILayer {
         // dataGroup.width = 480;
         // dataGroup.height = 300;
         // this.addChild(dataGroup);
+
+
     }
 }
