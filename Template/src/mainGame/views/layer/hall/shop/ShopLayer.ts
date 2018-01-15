@@ -30,23 +30,6 @@ class ShopLayer extends Layer {
 
 	private _onShopItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
-		let param = JSON.stringify({ gid: event.item.gid, Authorization: "ZW1tLWx1b3lhbnBpbmcteW91Y2FuZ3Vlc3N0aGlzLTE3NTA3" });
-		Http.post("http://47.104.85.224:3000/shop/gift/buy/", param, this.payOrderHandler, this);
-
+		platform.payOrder(event.item.gid);
 	}
-
-	/**
-	 * 下订单回调
-	 */
-	private payOrderHandler(e) {
-		var request = e.currentTarget;
-		let result = JSON.parse(request.response);
-		if (result.code == "200") {
-			//下单
-			platform.pay(result.data.product_id);
-		}
-		console.log("post data : ", request.response);
-	}
-
-
 }

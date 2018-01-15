@@ -34,20 +34,7 @@ var ShopLayer = (function (_super) {
     };
     ShopLayer.prototype._onShopItemTap = function (event) {
         console.log(event.itemIndex);
-        var param = JSON.stringify({ gid: event.item.gid, Authorization: "ZW1tLWx1b3lhbnBpbmcteW91Y2FuZ3Vlc3N0aGlzLTE3NTA3" });
-        Http.post("http://47.104.85.224:3000/shop/gift/buy/", param, this.payOrderHandler, this);
-    };
-    /**
-     * 下订单回调
-     */
-    ShopLayer.prototype.payOrderHandler = function (e) {
-        var request = e.currentTarget;
-        var result = JSON.parse(request.response);
-        if (result.code == "200") {
-            //下单
-            platform.pay(result.data.product_id);
-        }
-        console.log("post data : ", request.response);
+        platform.payOrder(event.item.gid);
     };
     return ShopLayer;
 }(Layer));
