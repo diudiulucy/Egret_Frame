@@ -42,8 +42,8 @@ class DebugPlatform implements Platform {
 
 
 if (!window.platform) {
-    window.platform = new EgretPlatform();
-    // window.platform = new DebugPlatform();
+    // window.platform = new EgretPlatform();
+    window.platform = new DebugPlatform();
 }
 
 declare let platform: Platform;

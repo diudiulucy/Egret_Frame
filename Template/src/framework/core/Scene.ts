@@ -5,7 +5,7 @@
  * @date 2018/01/05
  */
 class Scene extends eui.UILayer {
-    protected TAG: string = "";//方便调试
+    protected TAG: string = "";         //方便调试
     private _isRunning: boolean;
 
     public constructor() {

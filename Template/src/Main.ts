@@ -101,8 +101,42 @@ class Main extends eui.UILayer {
     protected createGameScene(): void {
 
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
+        // egret.ImageLoader.crossOrigin = "anonymous";
+        // let loader: egret.URLLoader = new egret.URLLoader();
+        // loader.dataFormat = egret.URLLoaderDataFormat.TEXTURE;
+        // loader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
+        // loader.addEventListener(egret.IOErrorEvent.IO_ERROR, this.onLoadError, this);
+        // let url =  "image/head_01.png";
 
-  
+        // let request = new egret.URLRequest(url);
+
+        // loader.load(request);
+        // var requestParams: any = {
+        //     gid:"6",
+        //     Authorization:"ZW1tLWx1b3lhbnBpbmcteW91Y2FuZ3Vlc3N0aGlzLTE3NTA3"
+        // };
+
+        // let urlLoader = new egret.URLLoader();
+
+        // let vari = new egret.URLVariables();
+        // vari.variables = requestParams;
+
+        // let request = new egret.URLRequest();
+        // request.url = "http://47.104.85.224:3000/shop/gift/buy/";
+        // request.method = egret.URLRequestMethod.POST;
+        // request.data = vari;
+
+
+
+        // urlLoader.load(request);
+
+        // urlLoader.addEventListener(egret.Event.COMPLETE, function (e: egret.Event) {
+        //     var data = JSON.parse(urlLoader.data);
+
+        
+        // }, this);
+
+
         // let scrollList: ScrollerList = new ScrollerList();
         // this.addChild(scrollList);
         // scrollList.width = 640;
@@ -148,6 +182,22 @@ class Main extends eui.UILayer {
         // dataGroup.height = 300;
         // this.addChild(dataGroup);
 
+
+    }
+
+    private onLoadComplete(event: egret.Event) {
+        egret.log("onLoadComplete");
+        var loader: egret.URLLoader = <egret.URLLoader>event.target;
+        //获取加载到的纹理对象
+        var texture: egret.Texture = <egret.Texture>loader.data;
+        egret.log(texture);
+
+        let a = new eui.Image();
+        a.texture = texture;
+        this.addChild(a);
+    }
+
+    private onLoadError() {
 
     }
 }

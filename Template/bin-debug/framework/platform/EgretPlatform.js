@@ -1,9 +1,3 @@
-/**
- * 白鹭开放平台
- * @author lucywang
- * @date 2018/01/12
- *
- */
 var __reflect = (this && this.__reflect) || function (p, c, t) {
     p.__class__ = c, t ? t.push(c) : t = [c], p.__types__ = p.__types__ ? t.concat(p.__types__) : t;
 };
@@ -42,6 +36,12 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
         if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
     }
 };
+/**
+ * 白鹭开放平台
+ * @author lucywang
+ * @date 2018/01/12
+ *
+ */
 var EgretPlatform = (function () {
     function EgretPlatform() {
         this._appKey = "vfgYd3UV8hyKPRAwvw8nH";
@@ -50,7 +50,7 @@ var EgretPlatform = (function () {
         this._goodsNumber = "1";
         this._ext = "";
         this._serverId = "1";
-        this.intervalDuration = 1000;
+        this._intervalDuration = 1000;
     }
     EgretPlatform.prototype.getUserInfo = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -165,7 +165,7 @@ var EgretPlatform = (function () {
         console.log(payInfo);
         if (payInfo.result == 0) {
             //支付成功，通知发货
-            this._intervalId = egret.setInterval(this._checkOrderHandler, this, this.intervalDuration);
+            this._intervalId = egret.setInterval(this._checkOrderHandler, this, this._intervalDuration);
         }
         else if (payInfo.result == -1) {
             //支付取消

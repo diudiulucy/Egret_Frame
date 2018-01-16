@@ -27,8 +27,8 @@ var LoginLayer = (function (_super) {
         this.btn_login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
     };
     LoginLayer.prototype.onLoginClick = function () {
-        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
-        platform.payOrder("6");
+        SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        // platform.payOrder("6");
     };
     return LoginLayer;
 }(Layer));

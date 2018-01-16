@@ -4,7 +4,6 @@
  * @date 2018/01/12
  * 
  */
-
 class EgretPlatform implements Platform {
     private _appKey = "vfgYd3UV8hyKPRAwvw8nH";
     private _appId = 92068;
@@ -12,7 +11,7 @@ class EgretPlatform implements Platform {
     private _goodsNumber: string = "1";
     private _ext: string = "";
     private _serverId: string = "1";
-    private intervalDuration = 1000;
+    private _intervalDuration = 1000;
     private _orderId;
     private _intervalId: number;
     async getUserInfo() {
@@ -86,7 +85,6 @@ class EgretPlatform implements Platform {
         }
     }
 
-
 	/**
 	 * 下订单回调
 	 */
@@ -101,14 +99,13 @@ class EgretPlatform implements Platform {
             console.log("订单号：",this._orderId)
             platform.pay(result.data.product_id);
         }
-
     }
 
     private _onPayHandler(payInfo: nest.iap.PayCallbackInfo): void {
         console.log(payInfo);
         if (payInfo.result == 0) {
             //支付成功，通知发货
-            this._intervalId = egret.setInterval(this._checkOrderHandler, this, this.intervalDuration);
+            this._intervalId = egret.setInterval(this._checkOrderHandler, this, this._intervalDuration);
         }
         else if (payInfo.result == -1) {
             //支付取消
@@ -145,6 +142,4 @@ class EgretPlatform implements Platform {
             }
         }, this);
     }
-
-
 }
