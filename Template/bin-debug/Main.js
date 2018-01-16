@@ -165,6 +165,8 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
+        var imgBg = document.getElementById("bgImg");
+        imgBg.parentNode.removeChild(imgBg);
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // egret.ImageLoader.crossOrigin = "anonymous";
         // let loader: egret.URLLoader = new egret.URLLoader();

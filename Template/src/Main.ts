@@ -99,7 +99,8 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-
+        let imgBg = document.getElementById("bgImg");
+        imgBg.parentNode.removeChild(imgBg);
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // egret.ImageLoader.crossOrigin = "anonymous";
         // let loader: egret.URLLoader = new egret.URLLoader();
@@ -133,7 +134,7 @@ class Main extends eui.UILayer {
         // urlLoader.addEventListener(egret.Event.COMPLETE, function (e: egret.Event) {
         //     var data = JSON.parse(urlLoader.data);
 
-        
+
         // }, this);
 
 
