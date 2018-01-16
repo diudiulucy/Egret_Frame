@@ -24,7 +24,7 @@ var LoginScene = (function (_super) {
         this.addChild(loginLayer);
     };
     LoginScene.prototype.onExitAnimation = function () {
-        egret.Tween.get(this).wait(300).to({ x: this.stage.width }, 600, egret.Ease.cubicOut);
+        // egret.Tween.get(this).wait(300).to({x:this.stage.width }, 600, egret.Ease.cubicOut);
     };
     return LoginScene;
 }(Scene));

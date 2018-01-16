@@ -14,6 +14,7 @@ class EgretPlatform implements Platform {
     private _intervalDuration = 1000;
     private _orderId;
     private _intervalId: number;
+    
     async getUserInfo() {
         return { nickName: "username" }
     }

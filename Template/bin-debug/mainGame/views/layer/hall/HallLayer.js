@@ -19,13 +19,26 @@ var HallLayer = (function (_super) {
     }
     HallLayer.prototype.init = function () {
         _super.prototype.init.call(this);
+        AnimUtil.Instance.doRepeatAnimation(this.logo, 500, 3);
+        // var timer = new egret.Timer(2000,3);
+        // timer.addEventListener(egret.TimerEvent.TIMER,this._onTimerHandler,this);
+        // timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE,this._onTimerComplete,this);
+        // timer.start();
     };
+    // private _onTimerHandler(event:egret.TimerEvent){
+    // 	let target = <egret.Timer>event.target;
+    // 	console.log("执行了",target.currentCount);
+    // }
+    // private _onTimerComplete(event:egret.TimerEvent){
+    // 	console.log("完成");
+    // }
     HallLayer.prototype.setOnTouchListener = function () {
         this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
         this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
         this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
         this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
         this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
+        // this.logo.addEventListener(egret.Event.ENTER_FRAME,this._onEnterFrame,this);
     };
     HallLayer.prototype.removeOnTouchListener = function () {
         this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
@@ -33,6 +46,9 @@ var HallLayer = (function (_super) {
         this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
         this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
     };
+    // private _onEnterFrame(){
+    // 	this.logo.x += 10;
+    // }
     HallLayer.prototype.childrenCreated = function () {
         _super.prototype.childrenCreated.call(this);
         var itemArray = [];

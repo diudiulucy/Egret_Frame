@@ -7,8 +7,8 @@ class HallLayer extends Layer {
 	private menu_bottom: HallMenu;
 	private gameEntryList: eui.List;
 	private menu_list: eui.List;
-	
-
+	private logo: eui.Image;
+	private system;
 	public constructor() {
 		super();
 		this.skinName = "Skin.Hall";
@@ -18,7 +18,21 @@ class HallLayer extends Layer {
 
 	protected init(): void {
 		super.init();
+		AnimUtil.Instance.doRepeatAnimation(this.logo, 500, 3);
+		// var timer = new egret.Timer(2000,3);
+		// timer.addEventListener(egret.TimerEvent.TIMER,this._onTimerHandler,this);
+		// timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE,this._onTimerComplete,this);
+		// timer.start();
 	}
+
+	// private _onTimerHandler(event:egret.TimerEvent){
+	// 	let target = <egret.Timer>event.target;
+	// 	console.log("执行了",target.currentCount);
+	// }
+
+	// private _onTimerComplete(event:egret.TimerEvent){
+	// 	console.log("完成");
+	// }
 
 	protected setOnTouchListener() {
 		this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
@@ -26,8 +40,7 @@ class HallLayer extends Layer {
 		this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
 		this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
 		this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
-
-	
+		// this.logo.addEventListener(egret.Event.ENTER_FRAME,this._onEnterFrame,this);
 	}
 
 	protected removeOnTouchListener() {
@@ -35,8 +48,11 @@ class HallLayer extends Layer {
 		this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
 		this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
 		this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
-		
 	}
+
+	// private _onEnterFrame(){
+	// 	this.logo.x += 10;
+	// }
 
 	protected childrenCreated() {
 		super.childrenCreated();
@@ -115,7 +131,7 @@ class HallLayer extends Layer {
 
 	private _onItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
-		PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer],EffectType.Slight,true);
+		PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
 	}
 
 	private _onBtnNewClick() {

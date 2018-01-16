@@ -34,7 +34,6 @@ class Scene extends eui.UILayer {
     // 进入层动画       
     public onEnterAnimation() {
         console.log(this.TAG + " onEnterAnimation");
-       
     }
 
 

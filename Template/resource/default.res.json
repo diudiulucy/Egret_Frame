@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,rich_png,rich_selected_png,plebs_png,plebs_selected_png,betGod_png,betGod_selected_png,newBie_png,newBie_selected_png,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png",
+			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,rich_png,rich_selected_png,plebs_png,plebs_selected_png,betGod_png,betGod_selected_png,newBie_png,newBie_selected_png,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png,fireworks_json,fire_json,magic_png,sun_json,blood_png,energy_png,jellyfish_json,star_png",
 			"name": "preload"
 		}
 	],
@@ -317,19 +317,59 @@
 			"name": "shop_title_png"
 		},
 		{
-			"name": "PreLoadingBg_png",
+			"url": "assets/bg/PreLoadingBg.png",
 			"type": "image",
-			"url": "assets/bg/PreLoadingBg.png"
+			"name": "PreLoadingBg_png"
 		},
 		{
-			"name": "back_png",
+			"url": "assets/commom/back.png",
 			"type": "image",
-			"url": "assets/commom/back.png"
+			"name": "back_png"
 		},
 		{
-			"name": "logo_png",
+			"url": "assets/hall/logo.png",
 			"type": "image",
-			"url": "assets/hall/logo.png"
+			"name": "logo_png"
+		},
+		{
+			"name": "fireworks_json",
+			"type": "json",
+			"url": "assets/particle/fireworks.json"
+		},
+		{
+			"name": "fire_json",
+			"type": "json",
+			"url": "assets/particle/fire.json"
+		},
+		{
+			"name": "magic_png",
+			"type": "image",
+			"url": "assets/particle/magic.png"
+		},
+		{
+			"name": "sun_json",
+			"type": "json",
+			"url": "assets/particle/sun.json"
+		},
+		{
+			"name": "blood_png",
+			"type": "image",
+			"url": "assets/particle/blood.png"
+		},
+		{
+			"name": "energy_png",
+			"type": "image",
+			"url": "assets/particle/energy.png"
+		},
+		{
+			"name": "jellyfish_json",
+			"type": "json",
+			"url": "assets/particle/jellyfish.json"
+		},
+		{
+			"name": "star_png",
+			"type": "image",
+			"url": "assets/particle/star.png"
 		}
 	]
 }

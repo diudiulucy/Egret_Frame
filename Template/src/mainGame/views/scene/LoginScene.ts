@@ -17,6 +17,6 @@ class LoginScene extends Scene {
 	}
 
 	public onExitAnimation(){
-		egret.Tween.get(this).wait(300).to({x:this.stage.width }, 600, egret.Ease.cubicOut);
+		// egret.Tween.get(this).wait(300).to({x:this.stage.width }, 600, egret.Ease.cubicOut);
 	}
 }
