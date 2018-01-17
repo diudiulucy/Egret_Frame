@@ -36,6 +36,7 @@ class HallLayer extends Layer {
 		// timer.addEventListener(egret.TimerEvent.TIMER,this._onTimerHandler,this);
 		// timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE,this._onTimerComplete,this);
 		// timer.start();
+		this._flowerParticle();
 	}
 
 	// private _onTimerHandler(event:egret.TimerEvent){
@@ -46,6 +47,19 @@ class HallLayer extends Layer {
 	// private _onTimerComplete(event:egret.TimerEvent){
 	// 	console.log("完成");
 	// }
+
+	private _flowerParticle() {
+		//获取纹理
+		var texture = RES.getRes("flower_png");
+		//获取配置
+		var config = RES.getRes("flower_json");
+		//创建 GravityParticleSystem
+		this.system = new particle.GravityParticleSystem(texture, config);
+		//启动粒子库
+		this.system.start();
+		//将例子系统添加到舞台
+		this.addChild(this.system);
+	}
 
 	protected setOnTouchListener() {
 		// this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);

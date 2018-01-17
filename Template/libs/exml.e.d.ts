@@ -85,10 +85,10 @@ declare module skins{
 	}
 }
 declare module skins{
-	class Shop extends eui.Skin{
+	class Rank extends eui.Skin{
 	}
 }
 declare module skins{
-	class Rank extends eui.Skin{
+	class Shop extends eui.Skin{
 	}
 }

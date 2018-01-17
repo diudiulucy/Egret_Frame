@@ -47,9 +47,9 @@ var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
         var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.configList = ["fireworks", "fire", "sun", "jellyfish"];
+        _this.configList = ["flower", "fire", "sun", "jellyfish"];
         _this.configIndex = -1;
-        _this.textureList = ["blood", "star", "energy", "magic"];
+        _this.textureList = ["flower", "star", "energy", "magic"];
         _this.textureIndex = 0;
         return _this;
         // private onLoadComplete(event: egret.Event) {

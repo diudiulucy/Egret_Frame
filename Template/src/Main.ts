@@ -65,9 +65,9 @@ class Main extends eui.UILayer {
     }
 
 
-    private configList: Array<string> = ["fireworks", "fire", "sun", "jellyfish"];
+    private configList: Array<string> = ["flower", "fire", "sun", "jellyfish"];
     private configIndex: number = -1;
-    private textureList: Array<string> = ["blood", "star", "energy", "magic"];
+    private textureList: Array<string> = ["flower", "star", "energy", "magic"];
     private textureIndex: number = 0;
     private system: particle.ParticleSystem;
     private btn1: egret.TextField;
