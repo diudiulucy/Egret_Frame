@@ -36,7 +36,7 @@ class PopupManager extends Single {
         scene.addChild(layer);
         this._popUpLayerList[layerName] = layer;
 
-
+        
         dark && this._createDarkBg(layer);
 
         effectType != EffectType.None && this._playOpenEffect(layer, effectType);

@@ -24,7 +24,7 @@ class ShopLayer extends Layer {
 	}
 
 	private _onCloseClick() {
-		PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Violent);
+		PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight);
 	}
 
 

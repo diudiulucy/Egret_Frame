@@ -116,6 +116,7 @@ class HallLayer extends Layer {
 
 	private _onMenuItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
+	
 		switch (event.itemIndex) {
 			case MenuList.Shop:
 				PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
@@ -123,7 +124,6 @@ class HallLayer extends Layer {
 			case MenuList.Mail:
 				PopupManager.Instance.open(PopUpLayers[PopUpLayers.MailLayer], EffectType.Violent, true);
 				break;
-
 		}
 
 	}

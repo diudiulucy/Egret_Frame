@@ -30,7 +30,7 @@ var ShopLayer = (function (_super) {
         this.shopList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onShopItemTap, this);
     };
     ShopLayer.prototype._onCloseClick = function () {
-        PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Violent);
+        PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight);
     };
     ShopLayer.prototype._onShopItemTap = function (event) {
         console.log(event.itemIndex);
