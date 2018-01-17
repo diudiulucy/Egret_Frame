@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <e:Skin class="TabBarButtonSkin" width="54" height="87" xmlns:e="http://ns.egret.com/eui"   states="up,down" >
-	<e:Image width="100%" height="100%" scale9Grid="17,14,18,50" source="{data.bg}" source.down="{data.select}" source.up="{data.normal}"/>
+	<e:Image width="100%" height="100%" scale9Grid="17,14,18,50" source.up="{data.normal}" source="tab2_png" source.down="tab_select_png"/>
 	<e:Label width="41" height="100%" textAlign="center" verticalAlign="middle" size.down="23" text.down="{data.name}" bold.down="false" border.down="false" borderColor.down="0xfc0202" strokeColor="0xfc0505" stroke="0.8" text="{data.name}" size="23" horizontalCenter="0" verticalCenter="0"/>
 </e:Skin>

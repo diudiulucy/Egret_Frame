@@ -40,18 +40,6 @@
 			<e:Label text="{coin}" x="504" y="117" backgroundColor="0x99670d" background="true" alpha="0.6" width="152" textAlign="center"/>
 			<e:Label text="金币：" x="420" y="117" anchorOffsetY="0" height="42" textColor="0x070707"/>
 			<e:Image source="coin_de_png" x="34.91" y="63.67"/>
-			<e:TabBar x="1151" y="111" itemRendererSkinName="TabBarButtonSkin" anchorOffsetY="0" height="480">
-				<e:ArrayCollection>
-					<e:Array>
-						<e:Object name="道具" normal="tab2_png" select="tab_select_png" height="null"/>
-						<e:Object name="金币" normal="tab2_png" select="tab_select_png" height="null"/>
-						<e:Object name="钻石" normal="tab2_png" select="tab_select_png" height="null"/>
-					</e:Array>
-				</e:ArrayCollection>
-				<e:layout>
-					<e:VerticalLayout gap="22"/>
-				</e:layout>
-			</e:TabBar>
 		</e:Group>
 	</e:Group>
 </e:Skin>
