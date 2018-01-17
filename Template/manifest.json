@@ -35,6 +35,7 @@
 		"bin-debug/mainGame/views/itemRender/PlayerStateItemRender.js",
 		"bin-debug/mainGame/views/layer/LoadingUI.js",
 		"bin-debug/mainGame/views/layer/hall/HallLayer.js",
+		"bin-debug/mainGame/views/layer/hall/mail/MailLayer.js",
 		"bin-debug/mainGame/views/layer/hall/shop/ShopLayer.js",
 		"bin-debug/mainGame/views/layer/login/LoginLayer.js",
 		"bin-debug/mainGame/views/scene/HallScene.js",

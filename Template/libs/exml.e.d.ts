@@ -57,10 +57,6 @@ declare module Skin{
 	}
 }
 declare module skins{
-	class Rank extends eui.Skin{
-	}
-}
-declare module skins{
 	class HallMenuItem extends eui.Skin{
 	}
 }
@@ -80,11 +76,19 @@ declare module skins{
 }
 declare class testRender extends eui.Skin{
 }
-declare module Skin{
+declare module skins{
 	class LoginLayer extends eui.Skin{
 	}
 }
 declare module skins{
+	class Mail extends eui.Skin{
+	}
+}
+declare module skins{
 	class Shop extends eui.Skin{
+	}
+}
+declare module skins{
+	class Rank extends eui.Skin{
 	}
 }

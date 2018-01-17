@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,rich_png,rich_selected_png,plebs_png,plebs_selected_png,betGod_png,betGod_selected_png,newBie_png,newBie_selected_png,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png,fireworks_json,fire_json,magic_png,sun_json,blood_png,energy_png,jellyfish_json,star_png",
+			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,tab_png,hall_bg_jpg,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png,fireworks_json,fire_json,magic_png,sun_json,blood_png,energy_png,jellyfish_json,star_png,+_png,decorate_png,topbar_png,icon_bg_png,coin2_png,imgmask_png,imgbg_png,dimond_png,betGod_selected_png,betGod_png,plebs_selected_png,rich_png,rich_selected_png,newBie_png,newBie_selected_png,plebs_png",
 			"name": "preload"
 		}
 	],
@@ -145,46 +145,6 @@
 			"url": "assets/bg/hall_bg.jpg",
 			"type": "image",
 			"name": "hall_bg_jpg"
-		},
-		{
-			"url": "assets/hall/rich.png",
-			"type": "image",
-			"name": "rich_png"
-		},
-		{
-			"url": "assets/hall/rich_selected.png",
-			"type": "image",
-			"name": "rich_selected_png"
-		},
-		{
-			"url": "assets/hall/plebs.png",
-			"type": "image",
-			"name": "plebs_png"
-		},
-		{
-			"url": "assets/hall/plebs_selected.png",
-			"type": "image",
-			"name": "plebs_selected_png"
-		},
-		{
-			"url": "assets/hall/betGod.png",
-			"type": "image",
-			"name": "betGod_png"
-		},
-		{
-			"url": "assets/hall/betGod_selected.png",
-			"type": "image",
-			"name": "betGod_selected_png"
-		},
-		{
-			"url": "assets/hall/newBie.png",
-			"type": "image",
-			"name": "newBie_png"
-		},
-		{
-			"url": "assets/hall/newBie_selected.png",
-			"type": "image",
-			"name": "newBie_selected_png"
 		},
 		{
 			"url": "assets/hall/menu/feedback.png",
@@ -370,6 +330,86 @@
 			"name": "star_png",
 			"type": "image",
 			"url": "assets/particle/star.png"
+		},
+		{
+			"name": "+_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/+.png"
+		},
+		{
+			"name": "decorate_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/decorate.png"
+		},
+		{
+			"name": "topbar_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/topbar.png"
+		},
+		{
+			"name": "icon_bg_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/icon_bg.png"
+		},
+		{
+			"name": "coin2_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/coin.png"
+		},
+		{
+			"name": "imgmask_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/imgmask.png"
+		},
+		{
+			"name": "imgbg_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/imgbg.png"
+		},
+		{
+			"name": "dimond_png",
+			"type": "image",
+			"url": "assets/hall/topbanner/dimond.png"
+		},
+		{
+			"name": "betGod_selected_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/betGod_selected.png"
+		},
+		{
+			"name": "betGod_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/betGod.png"
+		},
+		{
+			"name": "plebs_selected_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/plebs_selected.png"
+		},
+		{
+			"name": "rich_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/rich.png"
+		},
+		{
+			"name": "rich_selected_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/rich_selected.png"
+		},
+		{
+			"name": "newBie_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/newBie.png"
+		},
+		{
+			"name": "newBie_selected_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/newBie_selected.png"
+		},
+		{
+			"name": "plebs_png",
+			"type": "image",
+			"url": "assets/hall/gameEntry/plebs.png"
 		}
 	]
 }

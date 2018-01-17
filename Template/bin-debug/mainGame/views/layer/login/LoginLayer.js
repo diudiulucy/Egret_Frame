@@ -12,7 +12,7 @@ var LoginLayer = (function (_super) {
     __extends(LoginLayer, _super);
     function LoginLayer() {
         var _this = _super.call(this) || this;
-        _this.skinName = "Skin.LoginLayer";
+        _this.skinName = "skins.LoginLayer";
         _this.percentWidth = 100;
         _this.percentHeight = 100;
         return _this;

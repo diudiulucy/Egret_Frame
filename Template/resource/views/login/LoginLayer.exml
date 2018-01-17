@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<e:Skin class="Skin.LoginLayer" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:LC="LC.*"
+<e:Skin class="skins.LoginLayer" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing" xmlns:LC="LC.*"
         width="1280" height="750">
 	<e:Group width="100%" height="100%" horizontalCenter="0" verticalCenter="0">
 		<e:Image  width="100%" height="100%" source="PreLoadingBg_png"/>

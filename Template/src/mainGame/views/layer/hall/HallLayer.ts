@@ -1,3 +1,16 @@
+/**
+ * 底部菜单枚举类型
+ */
+enum MenuList {
+	Play,
+	FeedBack,
+	Settings,
+	Share,
+	Shop,
+	Mail,
+	Benifit,
+}
+
 class HallLayer extends Layer {
 	private player: ScrollerList;
 	private virtuallayout: eui.ToggleButton;
@@ -35,66 +48,24 @@ class HallLayer extends Layer {
 	// }
 
 	protected setOnTouchListener() {
-		this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		// this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		// this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onMenuItemTap, this);
 		this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
 		this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
-		// this.logo.addEventListener(egret.Event.ENTER_FRAME,this._onEnterFrame,this);
 	}
 
 	protected removeOnTouchListener() {
-		this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		// this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		// this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onMenuItemTap, this);
 		this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
 	}
-
-	// private _onEnterFrame(){
-	// 	this.logo.x += 10;
-	// }
 
 	protected childrenCreated() {
 		super.childrenCreated();
 
-		let itemArray = [
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" },
-			// { name: "lucy", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" }
-		];
+		let itemArray = [];
 		interface User {
 			name: number;
 			price: number
@@ -114,7 +85,7 @@ class HallLayer extends Layer {
 		// layout.requestedColumnCount = 3;
 
 
-		layout.horizontalAlign = eui.JustifyAlign.JUSTIFY;
+		layout.horizontalAlign = eui.JustifyAlign.CONTENT_JUSTIFY;
 		this.player.layout = layout;
 		// this.player.itemRendererSkinName = "testRender";
 		this.arrCol = new eui.ArrayCollection(itemArray);
@@ -129,9 +100,18 @@ class HallLayer extends Layer {
 		console.log(this.virtual.text)
 	}
 
-	private _onItemTap(event: eui.ItemTapEvent) {
+	private _onMenuItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
-		PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
+		switch (event.itemIndex) {
+			case MenuList.Shop:
+				PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
+				break;
+			case MenuList.Mail:
+				PopupManager.Instance.open(PopUpLayers[PopUpLayers.MailLayer], EffectType.Violent, true);
+				break;
+
+		}
+
 	}
 
 	private _onBtnNewClick() {
