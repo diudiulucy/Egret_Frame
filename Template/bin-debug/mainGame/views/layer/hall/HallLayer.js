@@ -13,7 +13,7 @@ r.prototype = e.prototype, t.prototype = new r();
  */
 var MenuList;
 (function (MenuList) {
-    MenuList[MenuList["Play"] = 0] = "Play";
+    MenuList[MenuList["Rule"] = 0] = "Rule";
     MenuList[MenuList["FeedBack"] = 1] = "FeedBack";
     MenuList[MenuList["Settings"] = 2] = "Settings";
     MenuList[MenuList["Share"] = 3] = "Share";
@@ -101,8 +101,8 @@ var HallLayer = (function (_super) {
             case MenuList.Shop:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
                 break;
-            case MenuList.Mail:
-                PopupManager.Instance.open(PopUpLayers[PopUpLayers.MailLayer], EffectType.Violent, true);
+            case MenuList.Rule:
+                PopupManager.Instance.open(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Violent, true);
                 break;
         }
     };

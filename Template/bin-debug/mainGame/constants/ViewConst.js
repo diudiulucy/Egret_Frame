@@ -12,6 +12,6 @@ var SceneConst;
 var PopUpLayers;
 (function (PopUpLayers) {
     PopUpLayers[PopUpLayers["ShopLayer"] = 0] = "ShopLayer";
-    PopUpLayers[PopUpLayers["MailLayer"] = 1] = "MailLayer";
+    PopUpLayers[PopUpLayers["RulelLayer"] = 1] = "RulelLayer";
 })(PopUpLayers || (PopUpLayers = {}));
 //# sourceMappingURL=ViewConst.js.map

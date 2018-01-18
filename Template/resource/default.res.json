@@ -1,7 +1,7 @@
 {
 	"groups": [
 		{
-			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,hall_bg_jpg,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png,fireworks_json,fire_json,magic_png,sun_json,blood_png,energy_png,jellyfish_json,star_png,+_png,decorate_png,topbar_png,icon_bg_png,coin2_png,imgmask_png,imgbg_png,dimond_png,betGod_selected_png,betGod_png,plebs_selected_png,rich_png,rich_selected_png,newBie_png,newBie_selected_png,plebs_png,flower_json,flower_png,newParticle_png,coin_de_png,tab2_png,tab_select_png,tab_de_png,tab_members_png,tab_members_select_png,player_png,tabBg_png,viewStackBg_png,tab_png,select_tip_png,tab_select2_png",
+			"keys": "description_json,button_down_png,button_up_png,checkbox_select_disabled_png,checkbox_select_down_png,checkbox_select_up_png,checkbox_unselect_png,bg_jpg,egret_icon_png,selected_png,border_png,header_png,thumb_pb_png,track_pb_png,radiobutton_select_disabled_png,radiobutton_select_down_png,radiobutton_select_up_png,radiobutton_unselect_png,roundthumb_png,track_sb_png,thumb_png,track_png,tracklight_png,handle_png,off_png,on_png,hall_bg_jpg,feedback_png,share_png,benifit_png,shop_png,settings_png,play_png,mail_png,menu_bg_png,left_png,rank_bg_png,head_01_png,green_png,green_fnt,PreLoadingBg_png,back_png,logo_png,fireworks_json,fire_json,magic_png,sun_json,blood_png,energy_png,jellyfish_json,star_png,+_png,decorate_png,topbar_png,icon_bg_png,coin2_png,imgmask_png,imgbg_png,dimond_png,betGod_selected_png,betGod_png,plebs_selected_png,rich_png,rich_selected_png,newBie_png,newBie_selected_png,plebs_png,flower_json,flower_png,newParticle_png,coin_de_png,tab2_png,tab_select_png,tab_de_png,tab_members_png,tab_members_select_png,player_png,select_tip_png,tab_png,tab_select2_png,radiobg_png,tab_view_bg_png",
 			"name": "preload"
 		}
 	],
@@ -454,32 +454,32 @@
 		{
 			"name": "player_png",
 			"type": "image",
-			"url": "assets/hall/playerule/player.png"
-		},
-		{
-			"name": "tabBg_png",
-			"type": "image",
-			"url": "assets/hall/playerule/tabBg.png"
-		},
-		{
-			"name": "viewStackBg_png",
-			"type": "image",
-			"url": "assets/hall/playerule/viewStackBg.png"
-		},
-		{
-			"name": "tab_png",
-			"type": "image",
-			"url": "assets/hall/playerule/tab.png"
+			"url": "assets/hall/rule/player.png"
 		},
 		{
 			"name": "select_tip_png",
 			"type": "image",
-			"url": "assets/hall/playerule/select_tip.png"
+			"url": "assets/hall/rule/select_tip.png"
+		},
+		{
+			"name": "tab_png",
+			"type": "image",
+			"url": "assets/hall/rule/tab.png"
 		},
 		{
 			"name": "tab_select2_png",
 			"type": "image",
-			"url": "assets/hall/playerule/tab_select.png"
+			"url": "assets/hall/rule/tab_select.png"
+		},
+		{
+			"name": "radiobg_png",
+			"type": "image",
+			"url": "assets/hall/rule/radiobg.png"
+		},
+		{
+			"name": "tab_view_bg_png",
+			"type": "image",
+			"url": "assets/hall/rule/tab_view_bg.png"
 		}
 	]
 }

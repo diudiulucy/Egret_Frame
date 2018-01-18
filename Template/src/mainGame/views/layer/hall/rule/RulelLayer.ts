@@ -1,9 +1,9 @@
-class MailLayer extends Layer {
+class RulelLayer extends Layer {
     private btn_close: eui.Button;
 
     public constructor() {
         super();
-        this.skinName = "skins.Mail";
+        this.skinName = "skins.RuleLayer";
         this.percentWidth = 100;
         this.percentHeight = 100;
     }
@@ -22,7 +22,7 @@ class MailLayer extends Layer {
     }
 
     private _onCloseClick() {
-		PopupManager.Instance.close(PopUpLayers[PopUpLayers.MailLayer], EffectType.Slight);
+		PopupManager.Instance.close(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Slight);
 	}
 
 }

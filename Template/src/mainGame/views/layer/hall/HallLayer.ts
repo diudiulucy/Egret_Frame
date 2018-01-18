@@ -2,7 +2,7 @@
  * 底部菜单枚举类型
  */
 enum MenuList {
-	Play,
+	Rule,
 	FeedBack,
 	Settings,
 	Share,
@@ -121,8 +121,8 @@ class HallLayer extends Layer {
 			case MenuList.Shop:
 				PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
 				break;
-			case MenuList.Mail:
-				PopupManager.Instance.open(PopUpLayers[PopUpLayers.MailLayer], EffectType.Violent, true);
+			case MenuList.Rule:
+				PopupManager.Instance.open(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Violent, true);
 				break;
 		}
 
