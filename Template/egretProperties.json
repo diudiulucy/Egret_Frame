@@ -1,53 +1,56 @@
 {
-  "engineVersion": "5.1.2",
-  "compilerVersion": "5.1.2",
-  "target": {
-    "current": "web"
-  },
-  "template": {},
-  "eui": {
-    "exmlRoot": [
-      "resource/eui_skins",
-      "resource/views"
-    ],
-    "themes": [
-      "resource/default.thm.json"
-    ],
-    "exmlPublishPolicy": "commonjs"
-  },
-  "modules": [
-    {
-      "name": "egret"
-    },
-    {
-      "name": "eui"
-    },
-    {
-      "name": "assetsmanager"
-    },
-    {
-      "name": "tween"
-    },
-    {
-      "name": "game"
-    },
-    {
-      "name": "socket"
-    },
-    {
-      "name": "promise"
-    },
-    {
-      "name": "cryptoJS",
-      "path": "../libsrc/cryptoJS"
-    },
-    {
-      "name": "nest",
-      "path": "../libsrc/nest"
-    },
-    {
-      "name": "particle",
-      "path": "../libsrc/particle"
-    }
-  ]
+	"engineVersion": "5.1.2",
+	"compilerVersion": "5.1.2",
+	"target": {
+		"current": "web"
+	},
+	"template": {},
+	"eui": {
+		"exmlRoot": [
+			"resource/eui_skins",
+			"resource/views"
+		],
+		"themes": [
+			"resource/default.thm.json"
+		],
+		"exmlPublishPolicy": "commonjs"
+	},
+	"modules": [
+		{
+			"name": "egret"
+		},
+		{
+			"name": "eui"
+		},
+		{
+			"name": "assetsmanager"
+		},
+		{
+			"name": "tween"
+		},
+		{
+			"name": "game"
+		},
+		{
+			"name": "socket"
+		},
+		{
+			"name": "promise"
+		},
+		{
+			"name": "cryptoJS",
+			"path": "../libsrc/cryptoJS"
+		},
+		{
+			"name": "nest",
+			"path": "../libsrc/nest"
+		},
+		{
+			"name": "particle",
+			"path": "../libsrc/particle"
+		}
+	],
+	"native": {
+		"android_as_path": "../runtime/android/TemplateAndroidAs"
+	}
 }
