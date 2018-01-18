@@ -91,11 +91,11 @@ declare module skins{
 	}
 }
 declare module skins{
-	class RuleLayer extends eui.Skin{
+	class SettingLayer extends eui.Skin{
 	}
 }
 declare module skins{
-	class SettingLayer extends eui.Skin{
+	class RuleLayer extends eui.Skin{
 	}
 }
 declare module skins{

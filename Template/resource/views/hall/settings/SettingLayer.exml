@@ -15,17 +15,6 @@
 		</e:skinName>
 		</e:Button>
 		<e:Image source="coin_de_png" x="34.91" y="63.67"/>
-		<e:Group x="155" y="146">
-			<ns1:TabStackView id="about" width="927" height="484" itemRendererSkinName="skins.TabBarButtonSkin" selectedIndex="0" x="0" y="0"  viewWidth="618" viewHeight="383" stackViewBg="tabViewBg_png"/>
-			<e:Group id="tab1" width="618" height="383" name="设置" visible="false">
-				<e:Label text="设置" x="64" y="75"/>
-			</e:Group>
-			<e:Group id="tab2" width="618" height="383" name="反馈" visible="false">
-				<e:Label text="反馈" x="64" y="75"/>
-			</e:Group>
-			<e:Group id="tab3" width="618" height="383" name="关于" visible="false">
-				<e:Label text="关于" x="64" y="75"/>
-			</e:Group>
-		</e:Group>
+		<ns1:TabStackView width="900" height="500" skinName="skins.TabStackView" verticalCenter="32" horizontalCenter="0"/>
 	</e:Group>
 </e:Skin>

@@ -40,8 +40,8 @@
 		"resource/views/login/LoginLayer.exml",
 		"resource/views/ui/TabBarButtonSkin.exml",
 		"resource/views/ui/TabStackView.exml",
-		"resource/views/hall/rule/RuleLayer.exml",
 		"resource/views/hall/settings/SettingLayer.exml",
+		"resource/views/hall/rule/RuleLayer.exml",
 		"resource/views/hall/shop/Shop.exml"
 	],
 	"path": "resource/default.thm.json"

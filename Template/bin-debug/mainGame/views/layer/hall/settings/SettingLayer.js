@@ -19,9 +19,6 @@ var SettingLayer = (function (_super) {
     }
     SettingLayer.prototype.init = function () {
         _super.prototype.init.call(this);
-        var viewArr = [this.tab1, this.tab2, this.tab3];
-        this.about.addTabViews(viewArr);
-        this.about.selectedIndex = 0;
     };
     SettingLayer.prototype.setOnTouchListener = function () {
         this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
