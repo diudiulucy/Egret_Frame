@@ -46,3 +46,18 @@ itemRenderSkinName赋值，绑定具体的item的皮肤,
 ![alt text](doc/images/9.png)
 
 具体的属性和itemRender的属性对应
+
+# PopUpManager的使用
+先创建自己的layer
+
+![alt text](doc/images/12.png)
+
+在viewconstant注册
+
+![alt text](doc/images/13.png)
+
+打开面板
+
+![alt text](doc/images/14.png)
+
+

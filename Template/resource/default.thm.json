@@ -30,8 +30,6 @@
 		"resource/eui_skins/ToggleSwitchSkin.exml",
 		"resource/eui_skins/VScrollBarSkin.exml",
 		"resource/eui_skins/VSliderSkin.exml",
-		"resource/views/hall/rank/Rank.exml",
-		"resource/views/hall/HallLayer.exml",
 		"resource/views/itemRender/HallMenuItem.exml",
 		"resource/views/itemRender/HallPlayItem.exml",
 		"resource/views/itemRender/playerState.exml",
@@ -39,6 +37,8 @@
 		"resource/views/itemRender/ShopItem.exml",
 		"resource/views/itemRender/testRender.exml",
 		"resource/views/login/LoginLayer.exml",
+		"resource/views/hall/rank/Rank.exml",
+		"resource/views/hall/HallLayer.exml",
 		"resource/views/hall/mail/Mail.exml",
 		"resource/views/hall/shop/Shop.exml"
 	],

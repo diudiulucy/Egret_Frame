@@ -1,7 +1,5 @@
 class MailLayer extends Layer {
-    private edit_name: eui.EditableText;
-    private edit_psw: eui.EditableText;
-    private btn_login: eui.Button;
+    private btn_close: eui.Button;
 
     public constructor() {
         super();
@@ -16,15 +14,15 @@ class MailLayer extends Layer {
     }
 
     protected setOnTouchListener() {
-        // this.btn_login.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
+        this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
     }
 
     protected removeOnTouchListener() {
-        // this.btn_login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
+        this.btn_close.removeEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
     }
 
-    private onLoginClick() {
-        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
-        // platform.payOrder("6");
-    }
+    private _onCloseClick() {
+		PopupManager.Instance.close(PopUpLayers[PopUpLayers.MailLayer], EffectType.Slight);
+	}
+
 }
