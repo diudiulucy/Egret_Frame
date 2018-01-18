@@ -12,4 +12,5 @@ enum SceneConst {
 enum PopUpLayers {
     ShopLayer,
     RulelLayer,
+    SettingLayer,
 }

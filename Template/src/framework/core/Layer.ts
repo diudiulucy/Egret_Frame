@@ -20,6 +20,7 @@ class Layer extends eui.Component {
 		this.watchData();
 	}
 
+
 	/**
 	  * 进行数据的监视
 	  */

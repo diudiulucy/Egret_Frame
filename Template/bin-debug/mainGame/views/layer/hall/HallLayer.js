@@ -104,6 +104,9 @@ var HallLayer = (function (_super) {
             case MenuList.Rule:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Violent, true);
                 break;
+            case MenuList.Settings:
+                PopupManager.Instance.open(PopUpLayers[PopUpLayers.SettingLayer], EffectType.LeftRigt, true);
+                break;
         }
     };
     HallLayer.prototype._onBtnNewClick = function () {

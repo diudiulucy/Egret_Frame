@@ -13,5 +13,6 @@ var PopUpLayers;
 (function (PopUpLayers) {
     PopUpLayers[PopUpLayers["ShopLayer"] = 0] = "ShopLayer";
     PopUpLayers[PopUpLayers["RulelLayer"] = 1] = "RulelLayer";
+    PopUpLayers[PopUpLayers["SettingLayer"] = 2] = "SettingLayer";
 })(PopUpLayers || (PopUpLayers = {}));
 //# sourceMappingURL=ViewConst.js.map
