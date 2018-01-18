@@ -21,14 +21,13 @@ var MailLayer = (function (_super) {
         _super.prototype.init.call(this);
     };
     MailLayer.prototype.setOnTouchListener = function () {
-        // this.btn_login.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
+        this.btn_close.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
     };
     MailLayer.prototype.removeOnTouchListener = function () {
-        // this.btn_login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
+        this.btn_close.removeEventListener(egret.TouchEvent.TOUCH_TAP, this._onCloseClick, this);
     };
-    MailLayer.prototype.onLoginClick = function () {
-        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
-        // platform.payOrder("6");
+    MailLayer.prototype._onCloseClick = function () {
+        PopupManager.Instance.close(PopUpLayers[PopUpLayers.MailLayer], EffectType.Slight);
     };
     return MailLayer;
 }(Layer));

@@ -34,7 +34,9 @@ declare module skins{
 	class ScrollerSkin extends eui.Skin{
 	}
 }
-declare class TabBarButtonSkin extends eui.Skin{
+declare module skins{
+	class TabBarButtonSkin extends eui.Skin{
+	}
 }
 declare module skins{
 	class TextInputSkin extends eui.Skin{
@@ -50,10 +52,6 @@ declare module skins{
 }
 declare module skins{
 	class VSliderSkin extends eui.Skin{
-	}
-}
-declare module Skin{
-	class Hall extends eui.Skin{
 	}
 }
 declare module skins{
@@ -78,6 +76,10 @@ declare class testRender extends eui.Skin{
 }
 declare module skins{
 	class LoginLayer extends eui.Skin{
+	}
+}
+declare module Skin{
+	class Hall extends eui.Skin{
 	}
 }
 declare module skins{
