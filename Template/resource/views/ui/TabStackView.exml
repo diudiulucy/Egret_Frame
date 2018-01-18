@@ -11,7 +11,7 @@
 		</e:Group>
 		<e:Group id="View" y="0" height="100%" x="-76" anchorOffsetX="0" width="683.15">
 			<e:Image source="tab_view_bg_png" width="100%" height="100%" scale9Grid="24,20,148,124"/>
-			<e:ViewStack id="viewStack" width="100%" height="100%" x="0" y="0" selectedIndex="2">
+			<e:ViewStack id="viewStack" width="100%" height="100%" x="0" y="0" selectedIndex="0">
 			<e:Group width="100%" height="100%" name="设置">
 				<e:Label text="推到胡" x="10" y="81"/>
 			</e:Group>

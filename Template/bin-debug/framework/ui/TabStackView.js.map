@@ -1,1 +1,1 @@
-{"version":3,"file":"TabStackView.js","sourceRoot":"","sources":["../../../src/framework/ui/TabStackView.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;;;GAGG;AACH;IAA2B,gCAAa;IAGvC;eACC,iBAAO;IACR,CAAC;IAIF,mBAAC;AAAD,CAAC,AATD,CAA2B,GAAG,CAAC,SAAS,GASvC;AATK,UAAA,YAAY,2BASjB,CAAA"}
+{"version":3,"file":"TabStackView.js","sourceRoot":"","sources":["../../../src/framework/ui/TabStackView.ts"],"names":[],"mappings":";;;;;;;;;;AAAA;;;GAGG;AACH;IAA2B,gCAAa;IAEvC;eACC,iBAAO;IACR,CAAC;IAEF,mBAAC;AAAD,CAAC,AAND,CAA2B,GAAG,CAAC,SAAS,GAMvC;AANK,UAAA,YAAY,2BAMjB,CAAA"}
