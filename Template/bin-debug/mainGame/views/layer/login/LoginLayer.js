@@ -19,6 +19,7 @@ var LoginLayer = (function (_super) {
     }
     LoginLayer.prototype.init = function () {
         _super.prototype.init.call(this);
+        FrameManager.Instance.addFrame(this, this.dosomething, this);
     };
     LoginLayer.prototype.setOnTouchListener = function () {
         this.btn_login.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
@@ -28,7 +29,11 @@ var LoginLayer = (function (_super) {
     };
     LoginLayer.prototype.onLoginClick = function () {
         SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
+    };
+    LoginLayer.prototype.dosomething = function () {
+        console.log("执行帧调度");
     };
     return LoginLayer;
 }(Layer));

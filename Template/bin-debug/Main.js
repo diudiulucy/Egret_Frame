@@ -46,24 +46,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var Main = (function (_super) {
     __extends(Main, _super);
     function Main() {
-        var _this = _super !== null && _super.apply(this, arguments) || this;
-        _this.configList = ["flower", "fire", "sun", "jellyfish"];
-        _this.configIndex = -1;
-        _this.textureList = ["flower", "star", "energy", "magic"];
-        _this.textureIndex = 0;
-        return _this;
-        // private onLoadComplete(event: egret.Event) {
-        //     egret.log("onLoadComplete");
-        //     var loader: egret.URLLoader = <egret.URLLoader>event.target;
-        //     //获取加载到的纹理对象
-        //     var texture: egret.Texture = <egret.Texture>loader.data;
-        //     egret.log(texture);
-        //     let a = new eui.Image();
-        //     a.texture = texture;
-        //     this.addChild(a);
-        // }
-        // private onLoadError() {
-        // }
+        return _super !== null && _super.apply(this, arguments) || this;
     }
     Main.prototype.createChildren = function () {
         _super.prototype.createChildren.call(this);
@@ -156,6 +139,7 @@ var Main = (function (_super) {
     Main.prototype.createGameScene = function () {
         var imgBg = document.getElementById("bgImg");
         imgBg.parentNode.removeChild(imgBg);
+        console.log(egret.MainContext.instance.stage == this.stage);
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
         // this.changeEffect();
@@ -219,39 +203,6 @@ var Main = (function (_super) {
         // dataGroup.width = 480;
         // dataGroup.height = 300;
         // this.addChild(dataGroup);
-    };
-    Main.prototype.onClick = function (event) {
-        if (event.target == this.btn1 || event.target == this.btn2) {
-            return;
-        }
-        this.system.emitterX = event.stageX;
-        this.system.emitterY = event.stageY;
-    };
-    Main.prototype.changeEffect = function () {
-        this.configIndex++;
-        if (this.configIndex >= this.configList.length) {
-            this.configIndex = 0;
-        }
-        var s = this.configList[this.configIndex];
-        var textureS = this.textureList[this.textureIndex];
-        var texture = RES.getRes(textureS + "_png");
-        var config = RES.getRes(s + "_json");
-        if (this.system) {
-            this.system.stop();
-            this.removeChild(this.system);
-        }
-        this.system = new particle.GravityParticleSystem(texture, config);
-        this.addChild(this.system);
-        this.system.start();
-    };
-    Main.prototype.changeTexture = function () {
-        this.textureIndex++;
-        if (this.textureIndex >= this.textureList.length) {
-            this.textureIndex = 0;
-        }
-        var s = this.textureList[this.textureIndex];
-        var texture = RES.getRes(s);
-        this.system.changeTexture(texture);
     };
     return Main;
 }(eui.UILayer));

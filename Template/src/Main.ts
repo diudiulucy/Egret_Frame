@@ -64,14 +64,6 @@ class Main extends eui.UILayer {
         })
     }
 
-
-    private configList: Array<string> = ["flower", "fire", "sun", "jellyfish"];
-    private configIndex: number = -1;
-    private textureList: Array<string> = ["flower", "star", "energy", "magic"];
-    private textureIndex: number = 0;
-    private system: particle.ParticleSystem;
-    private btn1: egret.TextField;
-    private btn2: egret.TextField;
     /**
      * 创建场景界面
      * Create scene interface
@@ -79,6 +71,12 @@ class Main extends eui.UILayer {
     protected createGameScene(): void {
         let imgBg = document.getElementById("bgImg");
         imgBg.parentNode.removeChild(imgBg);
+
+
+        console.log(egret.MainContext.instance.stage == this.stage);
+
+       
+      
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
 
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
@@ -168,43 +166,8 @@ class Main extends eui.UILayer {
     }
 
 
-    private onClick(event): void {
-        if (event.target == this.btn1 || event.target == this.btn2) {
-            return;
-        }
-        this.system.emitterX = event.stageX;
-        this.system.emitterY = event.stageY;
-    }
+    
 
-    private changeEffect(): void {
-        this.configIndex++;
-        if (this.configIndex >= this.configList.length) {
-            this.configIndex = 0;
-        }
-        var s = this.configList[this.configIndex];
-        var textureS = this.textureList[this.textureIndex];
-        var texture = RES.getRes(textureS + "_png");
-        var config = RES.getRes(s + "_json");
-
-        if (this.system) {
-            this.system.stop();
-            this.removeChild(this.system);
-        }
-
-        this.system = new particle.GravityParticleSystem(texture, config);
-        this.addChild(this.system);
-        this.system.start();
-    }
-
-    private changeTexture(): void {
-        this.textureIndex++;
-        if (this.textureIndex >= this.textureList.length) {
-            this.textureIndex = 0;
-        }
-        var s = this.textureList[this.textureIndex];
-        var texture = RES.getRes(s);
-        this.system.changeTexture(texture);
-    }
     // private onLoadComplete(event: egret.Event) {
     //     egret.log("onLoadComplete");
     //     var loader: egret.URLLoader = <egret.URLLoader>event.target;

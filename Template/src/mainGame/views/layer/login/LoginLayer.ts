@@ -12,6 +12,7 @@ class LoginLayer extends Layer {
 
     protected init(): void {
         super.init();
+        FrameManager.Instance.addFrame(this, this.dosomething, this);
 
     }
 
@@ -25,6 +26,11 @@ class LoginLayer extends Layer {
 
     private onLoginClick() {
         SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
+    }
+
+    private dosomething() {
+        console.log("执行帧调度");
     }
 }
