@@ -19,7 +19,7 @@ var LoginLayer = (function (_super) {
     }
     LoginLayer.prototype.init = function () {
         _super.prototype.init.call(this);
-        FrameManager.Instance.addFrame(this, this.dosomething, this);
+        // FrameManager.Instance.addFrame(this, this.dosomething, this);
     };
     LoginLayer.prototype.setOnTouchListener = function () {
         this.btn_login.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);

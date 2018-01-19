@@ -67,6 +67,7 @@ var Main = (function (_super) {
         this.runGame().catch(function (e) {
             console.log(e);
         });
+        console.log("=====================main");
     };
     Main.prototype.runGame = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -137,8 +138,8 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        var imgBg = document.getElementById("bgImg");
-        imgBg.parentNode.removeChild(imgBg);
+        // let imgBg = document.getElementById("bgImg");
+        // imgBg.parentNode.removeChild(imgBg);
         console.log(egret.MainContext.instance.stage == this.stage);
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);

@@ -1,6 +1,11 @@
 {
 	"engineVersion": "5.1.2",
 	"compilerVersion": "5.1.2",
+	"publish": {
+		"web": 0,
+		"native": 1,
+		"path": "bin-release"
+	},
 	"target": {
 		"current": "web"
 	},
@@ -51,6 +56,6 @@
 		}
 	],
 	"native": {
-		"android_as_path": "../runtime/android/TemplateAndroidAs"
+		"android_as_path": "../runtime/android/AndroidAs"
 	}
 }

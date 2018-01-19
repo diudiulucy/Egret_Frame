@@ -13,7 +13,10 @@
 			<e:Image source="tab_view_bg_png" width="100%" height="100%" scale9Grid="24,20,148,124"/>
 			<e:ViewStack id="viewStack" width="100%" height="100%" x="0" y="0" selectedIndex="0">
 			<e:Group width="100%" height="100%" name="设置">
-				<e:Label text="推到胡" x="10" y="81"/>
+				<e:Scroller width="90%" scrollPolicyH="off" anchorOffsetY="0" height="180" verticalCenter="-146" horizontalCenter="0">
+					<e:Label text="asdfasdasdfasfasdfasdfasdfasdfasdfas奥斯sdfsdfsdfsdfgsdfgsdfgdf卡来得及gsdfgsd付款时间段空间ADSL看水电费水电费公司的分公司电饭锅地方风景奥斯卡来得双方各撒地方公司的风格撒地方及福克斯的九分裤撒大家俯瞰风景奥斯卡来得及反馈圣诞节卡三等奖福克斯的金风科技社康的"/>
+				</e:Scroller>
+				<e:Image source="code_png" y="283" horizontalCenter="0"/>
 			</e:Group>
 				<e:Group width="100%" height="100%" name="关于">
 					<e:Label text="关于" x="10" y="81" scaleX="1" scaleY="1"/>

@@ -1,7 +1,7 @@
 {
 	"initial": [
 		"js/egret.min_cbeb05c3.js",
-		"js/egret.web.min_af52805a.js",
+		"js/egret.native.min_ff2c28bc.js",
 		"js/eui.min_407717cb.js",
 		"js/assetsmanager.min_e1030274.js",
 		"js/tween.min_6c5a88f9.js",
@@ -9,10 +9,11 @@
 		"js/socket.min_8e6dede.js",
 		"js/promise.min_83a6a5d.js",
 		"js/cryptoJS.min_73c84a6.js",
-		"js/nest.min_86b1be86.js"
+		"js/nest.min_86b1be86.js",
+		"js/particle.min_6ea86732.js"
 	],
 	"game": [
-		"js/default.thm_f51a4cc6.js",
-		"js/main.min_a34e1f36.js"
+		"js/default.thm_4c6fd4eb.js",
+		"js/main.min_bb5d27b5.js"
 	]
 }

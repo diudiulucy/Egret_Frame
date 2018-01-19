@@ -25,6 +25,8 @@ class Main extends eui.UILayer {
         this.runGame().catch(e => {
             console.log(e);
         })
+
+        console.log("=====================main");
     }
 
     private async runGame() {
@@ -69,8 +71,8 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-        let imgBg = document.getElementById("bgImg");
-        imgBg.parentNode.removeChild(imgBg);
+        // let imgBg = document.getElementById("bgImg");
+        // imgBg.parentNode.removeChild(imgBg);
 
 
         console.log(egret.MainContext.instance.stage == this.stage);

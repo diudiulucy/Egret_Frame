@@ -50,10 +50,6 @@ declare module skins{
 	class VSliderSkin extends eui.Skin{
 	}
 }
-declare module Skin{
-	class Hall extends eui.Skin{
-	}
-}
 declare module skins{
 	class HallMenuItem extends eui.Skin{
 	}
@@ -73,6 +69,10 @@ declare module skins{
 	}
 }
 declare class testRender extends eui.Skin{
+}
+declare module Skin{
+	class Hall extends eui.Skin{
+	}
 }
 declare module skins{
 	class LoginLayer extends eui.Skin{

@@ -12,7 +12,7 @@ class LoginLayer extends Layer {
 
     protected init(): void {
         super.init();
-        FrameManager.Instance.addFrame(this, this.dosomething, this);
+        // FrameManager.Instance.addFrame(this, this.dosomething, this);
 
     }
 
