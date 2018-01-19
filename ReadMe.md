@@ -60,4 +60,21 @@ itemRenderSkinName赋值，绑定具体的item的皮肤,
 
 ![alt text](doc/images/13.png)
 
+# tabView的使用
+
+和scrollerList一样拖拽到exml文件里
+然后指定皮肤为以下的
+
+![alt text](doc/images/15.png)
+
+以TabStackView为模板来建立你的tabView文件
+注意tab的dataProvider属性定义为viewstack
+
+![alt text](doc/images/16.png)
+每添加一个组，将其name赋值为tab上想要显示的内容
+
+egret编辑器直接看效果图
+![alt text](doc/images/17.png)
+
+
 
