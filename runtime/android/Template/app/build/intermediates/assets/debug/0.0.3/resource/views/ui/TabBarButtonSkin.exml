@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.TabBarButtonSkin" width="180" height="82" xmlns:e="http://ns.egret.com/eui"      states="up,down" >
+	<e:Group width="100%" height="100%">
+		<e:Image source="tab_png" horizontalCenter="0" verticalCenter="0" source.down="tab_select2_png"/>
+		<e:Label text="{data}" horizontalCenter="0" verticalCenter="0" textColor.up="0x843b12" textColor.down="0x843b12"/>
+		<e:Image source="select_tip_png" horizontalCenter="0" verticalCenter="0" includeIn="down"/>
+	</e:Group>
+</e:Skin>

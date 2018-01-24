@@ -21,6 +21,7 @@ class Main extends eui.UILayer {
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
 
+        egret.ImageLoader.crossOrigin = "anonymous";//解决玩吧图片的跨域问题
 
         this.runGame().catch(e => {
             console.log(e);
@@ -69,15 +70,24 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-        console.log(egret.MainContext.instance.stage == this.stage);
+        ErrorCodeManager.Instance.init("error_txt");
+        console.log(ErrorCodeManager.Instance.getErrorCode(1001));
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
 
         let imgBg = document.getElementById("bgImg");
         imgBg.parentNode.removeChild(imgBg);
 
+
+        egret.ExternalInterface.call("callNative", "js 调用过来了");
+
+        function callJS(msg) {
+            console.log(msg);
+        }
+
+        egret.ExternalInterface.addCallback("CallJS", callJS);
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
         // this.changeEffect();
-        // egret.ImageLoader.crossOrigin = "anonymous";
+
         // let loader: egret.URLLoader = new egret.URLLoader();
         // loader.dataFormat = egret.URLLoaderDataFormat.TEXTURE;
         // loader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);
@@ -101,8 +111,6 @@ class Main extends eui.UILayer {
         // request.url = "http://47.104.85.224:3000/shop/gift/buy/";
         // request.method = egret.URLRequestMethod.POST;
         // request.data = vari;
-
-
 
         // urlLoader.load(request);
 
@@ -160,9 +168,6 @@ class Main extends eui.UILayer {
 
 
     }
-
-
-
 
     // private onLoadComplete(event: egret.Event) {
     //     egret.log("onLoadComplete");

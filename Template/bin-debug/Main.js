@@ -64,6 +64,7 @@ var Main = (function (_super) {
         var assetAdapter = new AssetAdapter();
         egret.registerImplementation("eui.IAssetAdapter", assetAdapter);
         egret.registerImplementation("eui.IThemeAdapter", new ThemeAdapter());
+        egret.ImageLoader.crossOrigin = "anonymous"; //解决玩吧图片的跨域问题
         this.runGame().catch(function (e) {
             console.log(e);
         });
@@ -137,13 +138,18 @@ var Main = (function (_super) {
      * Create scene interface
      */
     Main.prototype.createGameScene = function () {
-        console.log(egret.MainContext.instance.stage == this.stage);
+        ErrorCodeManager.Instance.init("error_txt");
+        console.log(ErrorCodeManager.Instance.getErrorCode(1001));
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         var imgBg = document.getElementById("bgImg");
         imgBg.parentNode.removeChild(imgBg);
+        egret.ExternalInterface.call("callNative", "js 调用过来了");
+        function callJS(msg) {
+            console.log(msg);
+        }
+        egret.ExternalInterface.addCallback("CallJS", callJS);
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
         // this.changeEffect();
-        // egret.ImageLoader.crossOrigin = "anonymous";
         // let loader: egret.URLLoader = new egret.URLLoader();
         // loader.dataFormat = egret.URLLoaderDataFormat.TEXTURE;
         // loader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.HallMenuItem" width="91" height="94" xmlns:e="http://ns.egret.com/eui">
+	<e:Image width="100%" height="100%" source="{data.icon}"/>
+</e:Skin>

@@ -22,6 +22,7 @@
 		"bin-debug/Main.js",
 		"bin-debug/framework/adapter/ThemeAdapter.js",
 		"bin-debug/framework/anim/AnimUtil.js",
+		"bin-debug/framework/manager/ErrorCodeManager.js",
 		"bin-debug/framework/manager/EventManager.js",
 		"bin-debug/framework/manager/FrameManager.js",
 		"bin-debug/framework/manager/PopupManager.js",

@@ -9,6 +9,7 @@ import org.egret.launcher.egret_android_launcher.NativeActivity;
 import org.egret.launcher.egret_android_launcher.NativeCallback;
 import org.egret.launcher.egret_android_launcher.NativeLauncher;
 import org.egret.runtime.launcherInterface.INativePlayer;
+import org.json.JSONArray;
 
 public class MainActivity extends NativeActivity {
     private final String token = "e7fa87c6d4745df6c8328b0aaa926c076c377ef1a172ab8fd1fc7b387c73cd97";
@@ -128,7 +129,8 @@ public class MainActivity extends NativeActivity {
             @Override
             public void callback(String s) {
                 Log.d("Egret Launcher", s);
-                launcher.callExternalInterface("callJS", "message from native");
+                
+                launcher.callExternalInterface("CallJS", "原生调用js");
             }
         });
     }
