@@ -32,6 +32,8 @@ var LoginLayer = (function (_super) {
         // FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
         console.log("更新没");
+        egret.localStorage.setItem("userName", this.edit_name.text);
+        egret.localStorage.setItem("psw", this.edit_psw.text);
     };
     LoginLayer.prototype.dosomething = function () {
         console.log("执行帧调度");
