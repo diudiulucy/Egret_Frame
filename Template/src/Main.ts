@@ -25,8 +25,6 @@ class Main extends eui.UILayer {
         this.runGame().catch(e => {
             console.log(e);
         })
-
-        console.log("=====================main");
     }
 
     private async runGame() {
@@ -71,15 +69,11 @@ class Main extends eui.UILayer {
      * Create scene interface
      */
     protected createGameScene(): void {
-        // let imgBg = document.getElementById("bgImg");
-        // imgBg.parentNode.removeChild(imgBg);
-
-
         console.log(egret.MainContext.instance.stage == this.stage);
-
-       
-      
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
+
+        let imgBg = document.getElementById("bgImg");
+        imgBg.parentNode.removeChild(imgBg);
 
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
         // this.changeEffect();
@@ -168,7 +162,7 @@ class Main extends eui.UILayer {
     }
 
 
-    
+
 
     // private onLoadComplete(event: egret.Event) {
     //     egret.log("onLoadComplete");

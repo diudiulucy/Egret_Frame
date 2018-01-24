@@ -32,8 +32,8 @@ var SceneManager = (function (_super) {
     });
     //启动游戏，并运行scene场景。本方法在主程序第一次启动主场景的时候调用。如果已有正在运行的场景则不能调用该方法；会调用pushScene-->startAnimation。
     SceneManager.prototype.runWithScene = function (sceneName) {
-        egret.assert(sceneName != null, "This command can only be used to start the SceneManager. There is already a scene present.");
-        egret.assert(this._runningScene == null, "_runningScene should be null");
+        console.assert(sceneName != null, "This command can only be used to start the SceneManager. There is already a scene present.");
+        console.assert(this._runningScene == null, "_runningScene should be null");
         this.pushScene(sceneName);
     };
     //直接使用传入的scene替换当前场景来切换画面，当前场景被释放。这是切换场景时最常用的方法。
