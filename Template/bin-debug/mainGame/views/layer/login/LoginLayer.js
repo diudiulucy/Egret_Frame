@@ -31,7 +31,7 @@ var LoginLayer = (function (_super) {
         SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
         // FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
-        //  console.log("更新没");
+        console.log("更新没");
     };
     LoginLayer.prototype.dosomething = function () {
         console.log("执行帧调度");
