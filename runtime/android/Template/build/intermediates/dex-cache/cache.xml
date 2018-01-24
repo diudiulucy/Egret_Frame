@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="E:\Egret_Frame_\runtime\android\Template\app\libs\egretlauncher.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="1baf91f8c36af57d2413c91a8b39873942d2bad4">
+        <dex dex="E:\Egret_Frame_\runtime\android\Template\app\build\intermediates\pre-dexed\debug\egretlauncher_fc834eed7b81d8b29b8d400f91c92f53e8c9a65c.jar" />
+    </item>
+
+</items>
