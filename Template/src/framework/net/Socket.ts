@@ -5,7 +5,8 @@
  */
 class Socket extends Single {
 	private _socket: egret.WebSocket;
-
+	private static readonly _AESKEY:string = '@ZYHD#GDMJ!112233!love**foreverX';
+	private static readonly _headSize: number = 12;
 	private constructor() {
 		super();
 		this._createSocket();
@@ -92,8 +93,31 @@ class Socket extends Single {
 	public sendData(mainID: number, data?: string, AssistantID?: number) {
 		if(this._socket && this._socket.connected){
 			console.log(JSON.stringify({mainID:mainID,data:data}));
-			
+			let bytes:egret.ByteArray = this._pack(mainID,data,AssistantID);
+			this._socket.writeBytes(bytes);
+		}else{
+			egret.log("socket is not connected");
 		}
+	}
+
+	private _pack(mainID: number,data: string, AssistantID: number = 0): egret.ByteArray{
+		// let bodyBytes = 
+		let bytes:egret.ByteArray = new egret.ByteArray();
+		bytes.endian = egret.Endian.LITTLE_ENDIAN;
+		bytes.position = 0;
+
+
+		let body:egret.ByteArray = new egret.ByteArray();
+		bytes.endian = egret.Endian.LITTLE_ENDIAN;
+
+		let len = Socket._headSize + body.length;
+		bytes.writeInt(len);
+		bytes.writeInt(mainID);
+		bytes.writeInt(AssistantID);
+
+		bytes.writeBytes(body,0,len);
+
+		return bytes;
 	}
 
 }
