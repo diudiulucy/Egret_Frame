@@ -27,10 +27,11 @@ class NativeManager extends Single {
     }
 
     /**
-     * 注册原生的回调函数
+     * 注册所有原生的回调函数
      */
     private _setNativeInterface() {
         egret.ExternalInterface.addCallback("CallJS", this._callJS);
+        //TODO 
     }
 
     private _callJS(msg:string) {

@@ -59,7 +59,10 @@ module ArrayUtils {
 		return (arr.length == 0);
 	}
 
-
+	/**
+	 * 字符串转换为arrybuffer
+	 * @param str
+	 */
 	export function strToArrayBuffer(str: string): ArrayBuffer {
 		let buffer = new ArrayBuffer(str.length ); 
 		let bufView = new Uint8Array(buffer);

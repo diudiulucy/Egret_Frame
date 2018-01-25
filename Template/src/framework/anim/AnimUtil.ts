@@ -28,9 +28,4 @@ class AnimUtil extends Single {
 
 		egret.Tween.get(target).to({ alpha: 0 }, duration).call(onComplete, this, [target, repeat]);
 	}
-
-	
-
-
-	
 }

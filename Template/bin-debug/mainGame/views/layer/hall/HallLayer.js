@@ -100,9 +100,11 @@ var HallLayer = (function (_super) {
         switch (event.itemIndex) {
             case MenuList.Shop:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight, true);
+                Socket.Instance.startConnect("ws://echo.websocket.org:80");
                 break;
             case MenuList.Rule:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Violent, true);
+                Socket.Instance.closeSocket();
                 break;
             case MenuList.Settings:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.SettingLayer], EffectType.LeftRigt, true);

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="skins.TabStackView" width="900" height="562" xmlns:e="http://ns.egret.com/eui" xmlns:w="http://ns.egret.com/wing">
+	<e:Group id="TabStackView" width="100%" height="100%" horizontalCenter="0" verticalCenter="0">
+		<e:Group id="Tab" height="100%" left="0" x="0" y="0" scaleX="1" scaleY="1">
+			<e:Image id="tabBg" width="196" anchorOffsetY="0" height="100%" scale9Grid="16,7,99,48" horizontalCenter="0" verticalCenter="0" source="tab_view_bg_png"/>
+			<e:TabBar dataProvider="{viewStack}" itemRendererSkinName="skins.TabBarButtonSkin" horizontalCenter="0" top="20">
+			<e:layout>
+				<e:VerticalLayout/>
+			</e:layout>
+			</e:TabBar>
+		</e:Group>
+		<e:Group id="View" y="0" height="100%" x="-76" anchorOffsetX="0" width="683.15">
+			<e:Image source="tab_view_bg_png" width="100%" height="100%" scale9Grid="24,20,148,124"/>
+			<e:ViewStack id="viewStack" width="100%" height="100%" x="0" y="0" selectedIndex="0">
+			<e:Group width="100%" height="100%" name="设置">
+				<e:Scroller width="90%" scrollPolicyH="off" anchorOffsetY="0" height="180" verticalCenter="-146" horizontalCenter="0">
+					<e:Label text="asdfasdasdfasfasdfasdfasdfasdfasdfas奥斯sdfsdfsdfsdfgsdfgsdfgdf卡来得及gsdfgsd付款时间段空间ADSL看水电费水电费公司的分公司电饭锅地方风景奥斯卡来得双方各撒地方公司的风格撒地方及福克斯的九分裤撒大家俯瞰风景奥斯卡来得及反馈圣诞节卡三等奖福克斯的金风科技社康的"/>
+				</e:Scroller>
+				<e:Image source="code_png" y="283" horizontalCenter="0"/>
+			</e:Group>
+				<e:Group width="100%" height="100%" name="关于">
+					<e:Label text="关于" x="10" y="81" scaleX="1" scaleY="1"/>
+				</e:Group>
+			<e:Group width="100%" height="100%" name="反馈">
+				<e:Label text="反馈" x="17" y="79" scaleX="1" scaleY="1"/>
+			</e:Group>
+			</e:ViewStack>
+		</e:Group>
+		<e:layout>
+			<e:HorizontalLayout gap="20"/>
+		</e:layout>
+	</e:Group>
+</e:Skin>

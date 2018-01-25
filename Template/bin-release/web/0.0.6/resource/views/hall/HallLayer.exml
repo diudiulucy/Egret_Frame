@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<e:Skin class="Skin.Hall" width="1280" height="720" xmlns:e="http://ns.egret.com/eui" xmlns:ns1="*"
+        xmlns:w="http://ns.egret.com/wing" xmlns:tween="egret.tween.*">
+	<w:Declarations>
+		<tween:TweenGroup id="up">
+			<tween:TweenItem target="{image}">
+				<tween:To duration="1000" ease="quintIn">
+					<tween:props>
+						<e:Object rotation="{45}"/>
+					</tween:props>
+				</tween:To>
+			</tween:TweenItem>
+		</tween:TweenGroup>
+	</w:Declarations>
+	<e:Group x="0" y="0" width="100%" height="100%">
+		<e:Image source="hall_bg_jpg" width="100%" height="100%" x="0" y="0"/>
+		<e:Group id="top" width="100%">
+			<e:Group id="bg" x="0" y="0" width="100%">
+			<e:Image source="topbar_png" y="0" width="50%" left="0"/>
+			<e:Image source="topbar_png" scaleX="-1" y="0" width="50%" right="0"/>
+				<e:Label text="Mr.big" x="264" y="21" bold="true" textColor="0xf4ad02"/>
+			</e:Group>
+			<e:Image source="decorate_png" y="46" right="44"/>
+			<e:Group id="head" y="0" left="102">
+			<e:Image source="imgbg_png" horizontalCenter="0" verticalCenter="0"/>
+			<e:Image source="imgmask_png" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+			<e:Group id="coin" y="6" height="64" anchorOffsetX="0" width="224" right="400">
+			<e:Image source="icon_bg_png" verticalCenter="0" width="100%"/>
+			<e:Image source="+_png" right="6" verticalCenter="-2"/>
+			<e:Image source="coin2_png" verticalCenter="0"/>
+			<e:Label text="99.16万" textColor="0xdbac0d" size="23" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+			<e:Group id="dimond" height="64" anchorOffsetX="0" width="224" right="150" y="6">
+			<e:Image source="icon_bg_png" verticalCenter="0" width="100%"/>
+			<e:Image source="+_png" right="6" verticalCenter="-2"/>
+			<e:Image verticalCenter="0" source="dimond_png"/>
+			<e:Label text="99.16万" textColor="0xDBAC0D" size="23" horizontalCenter="0" verticalCenter="0"/>
+			</e:Group>
+		</e:Group>
+		<e:Image id="logo" source="logo_png" horizontalCenter="-246" verticalCenter="-210"/>
+		<e:Scroller width="660" height="370" anchorOffsetX="0" anchorOffsetY="0" verticalCenter="50" horizontalCenter="-220">
+			<e:List id="gameEntryList" itemRendererSkinName="skins.HallPlayItem">
+			<e:ArrayCollection>
+				<e:Array>
+				<e:Object antes="底注：200" condition="两批马 有癞子 2000金币" icon="newBie_png" icon_selected="newBie_selected_png"/>
+				<e:Object antes="底注：800" condition="两批马 有癞子 2000金币" icon="plebs_png" icon_selected="plebs_selected_png"/>
+				<e:Object antes="底注：1000" condition="两批马 有癞子 2000金币" icon="rich_png" icon_selected="rich_selected_png"/>
+				<e:Object antes="底注：2000" condition="两批马 有癞子 2000金币" icon="betGod_png" icon_selected="betGod_selected_png"/>
+				<e:Object antes="底注：2000" condition="两批马 有癞子 2000金币" icon="betGod_png" icon_selected="betGod_selected_png"/>
+				<e:Object antes="底注：2000" condition="两批马 有癞子 2000金币" icon="betGod_png" icon_selected="betGod_selected_png"/>
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+				<e:HorizontalLayout/>
+			</e:layout>
+			</e:List>
+		</e:Scroller>
+		<ns1:Rank width="442" height="468" skinName="skins.Rank" verticalCenter="0" horizontalCenter="350"/>
+		<e:Group id="bottom" width="100%" x="0" bottom="0">
+			<e:Image source="menu_bg_png" width="100%" height="100%"/>
+			<e:List id="menu_list" width="950" height="100%" itemRendererSkinName="skins.HallMenuItem" anchorOffsetX="0" horizontalCenter="0">
+			<e:ArrayCollection>
+				<e:Array>
+				<e:Object icon="play_png"/>
+				<e:Object icon="feedback_png"/>
+				<e:Object icon="settings_png"/>
+				<e:Object icon="share_png"/>
+				<e:Object icon="shop_png"/>
+				<e:Object icon="mail_png"/>
+				<e:Object icon="benifit_png"/>
+				</e:Array>
+			</e:ArrayCollection>
+			<e:layout>
+				<e:HorizontalLayout horizontalAlign="center" verticalAlign="middle" gap="50" paddingLeft="0"/>
+			</e:layout>
+			</e:List>
+			<e:Image source="left_png" height="100%"/>
+		</e:Group>
+		<ns1:ScrollerList id="player" width="640" height="80%" horizontalCenter="0" verticalCenter="0" itemRendererSkinName="testRender" visible="false"/>
+		<e:DataGroup width="200" height="200" x="633" y="139" itemRendererSkinName="testRender" visible="false">
+			<e:ArrayCollection>
+			<e:Array>
+				<e:Object name="null" price="null"/>
+				<e:Object name="null" price="null"/>
+				<e:Object name="null" price="null"/>
+			</e:Array>
+			</e:ArrayCollection>
+		</e:DataGroup>
+		<e:ToggleButton id="virtuallayout" label="虚拟" x="1050" y="338" visible="false"/>
+		<e:Label id="virtual" text="" x="1052" y="248" visible="false"/>
+		<e:Button id="btn_new" label="更新数据" x="1064" y="220" visible="false"/>
+	</e:Group>
+</e:Skin>

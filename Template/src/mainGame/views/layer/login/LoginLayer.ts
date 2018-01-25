@@ -40,6 +40,8 @@ class LoginLayer extends Layer {
         console.log(egret.Base64Util.encode(ArrayUtils.strToArrayBuffer(str)));
 
         egret.localStorage.setItem("psw", this.edit_psw.text);
+
+       
     }
 
     private dosomething() {
