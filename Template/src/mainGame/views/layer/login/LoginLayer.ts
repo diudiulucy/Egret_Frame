@@ -28,10 +28,18 @@ class LoginLayer extends Layer {
         SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
         // FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
-         console.log("更新没");
+        console.log("更新没");
 
-         egret.localStorage.setItem("userName",this.edit_name.text);
-         egret.localStorage.setItem("psw",this.edit_psw.text);
+        egret.localStorage.setItem("userName", this.edit_name.text);
+
+        let a = egret.Base64Util.decode("MTEyMjMz");
+        console.log(egret.Base64Util.encode(a));
+
+        let str = this.edit_psw.text;
+        
+        console.log(egret.Base64Util.encode(ArrayUtils.strToArrayBuffer(str)));
+
+        egret.localStorage.setItem("psw", this.edit_psw.text);
     }
 
     private dosomething() {

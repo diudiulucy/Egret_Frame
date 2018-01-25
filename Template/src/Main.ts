@@ -77,17 +77,12 @@ class Main extends eui.UILayer {
         let imgBg = document.getElementById("bgImg");
         imgBg.parentNode.removeChild(imgBg);
 
-
-        egret.ExternalInterface.call("callNative", "js 调用过来了");
-
-        function callJS(msg) {
-            console.log(msg);
-        }
-
-        egret.ExternalInterface.addCallback("CallJS", callJS);
+        let obj = { id:1,name:2};
+        let data = JSON.stringify(obj);
+        NativeManager.Instance.callNative(NativeFunc.callNative, data);
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
         // this.changeEffect();
-
+        
         // let loader: egret.URLLoader = new egret.URLLoader();
         // loader.dataFormat = egret.URLLoaderDataFormat.TEXTURE;
         // loader.addEventListener(egret.Event.COMPLETE, this.onLoadComplete, this);

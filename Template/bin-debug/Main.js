@@ -143,11 +143,9 @@ var Main = (function (_super) {
         SceneManager.Instance.runWithScene(SceneConst[SceneConst.LoginScene]);
         var imgBg = document.getElementById("bgImg");
         imgBg.parentNode.removeChild(imgBg);
-        egret.ExternalInterface.call("callNative", "js 调用过来了");
-        function callJS(msg) {
-            console.log(msg);
-        }
-        egret.ExternalInterface.addCallback("CallJS", callJS);
+        var obj = { id: 1, name: 2 };
+        var data = JSON.stringify(obj);
+        NativeManager.Instance.callNative(NativeFunc.callNative, data);
         // this.stage.addEventListener(egret.TouchEvent.TOUCH_TAP, this.onClick, this);
         // this.changeEffect();
         // let loader: egret.URLLoader = new egret.URLLoader();

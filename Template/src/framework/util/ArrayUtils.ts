@@ -8,7 +8,7 @@ module ArrayUtils {
 	 * 定义一个Map,索引值为number;
 	 */
 	export interface Map<T> {
-		[key:number]:T;
+		[key: number]: T;
 	}
 
 	/**
@@ -41,21 +41,31 @@ module ArrayUtils {
 	 * @param arr 数组
 	 * @returns value 值
 	 */
-	export function deleteByValue(arr:Array<any>,value:any){
+	export function deleteByValue(arr: Array<any>, value: any) {
 		let index = arr.indexOf(value);
-		index !=-1 && arr.splice(index,1)
+		index != -1 && arr.splice(index, 1)
 	}
 
 	/**
 	 * 数组的深拷贝
 	 */
-	export function DeepCopy(arr:Array<any>){
+	export function DeepCopy(arr: Array<any>) {
 		return [].concat(JSON.parse(JSON.stringify(arr)));
 	}
 
-	export function isEmptyObject(object){
+	export function isEmptyObject(object) {
 		// return (JSON.stringify(object) == "{}"); //或者用此方法来判定
 		let arr = Object.keys(object);
 		return (arr.length == 0);
+	}
+
+
+	export function strToArrayBuffer(str: string): ArrayBuffer {
+		let buffer = new ArrayBuffer(str.length ); 
+		let bufView = new Uint8Array(buffer);
+		for (let i = 0; i < str.length; i++) {
+			bufView[i] = str.charCodeAt(i);
+		}
+		return buffer;
 	}
 }
