@@ -47,14 +47,23 @@ var Socket = (function (_super) {
     };
     /**
       * 关闭socket
-      *
       */
     Socket.prototype.closeSocket = function () {
         this._socket.removeEventListener(egret.Event.CONNECT, this._onSocketConnected, this);
         this._socket.removeEventListener(egret.Event.CLOSE, this._onSocketClose, this);
         this._socket.removeEventListener(egret.IOErrorEvent.IO_ERROR, this._onSocketError, this);
         this._socket.removeEventListener(egret.ProgressEvent.SOCKET_DATA, this._onReceiveMessage, this);
-        this._socket.close();
+        this._socket.connected && this._socket.close();
+    };
+    /**
+     * socket是否已连接
+     *
+     */
+    Socket.prototype.isConnected = function () {
+        if (this._socket && this._socket.connected) {
+            return true;
+        }
+        return false;
     };
     /**
      * 连接成功回调
@@ -78,13 +87,54 @@ var Socket = (function (_super) {
      * 接收数据回调
      */
     Socket.prototype._onReceiveMessage = function (event) {
+        egret.log("_onReceiveMessage");
+        this._unPack();
     };
     /**
      * 发送数据
      *
      */
     Socket.prototype.sendData = function (mainID, data, AssistantID) {
+        if (this._socket && this._socket.connected) {
+            console.log("Send: mainID = " + mainID + " data = " + data);
+            var bytes = this._pack(mainID, data, AssistantID);
+            this._socket.writeBytes(bytes);
+        }
+        else {
+            egret.log("socket is not connected");
+        }
     };
+    Socket.prototype._unPack = function () {
+        var byte = new egret.ByteArray();
+        this._socket.readBytes(byte);
+        byte.endian = egret.Endian.LITTLE_ENDIAN;
+        var len = byte.readInt();
+        var mainID = byte.readInt();
+        var assistantID = byte.readInt();
+        var bodyBytes = new egret.ByteArray();
+        bodyBytes.readBytes(bodyBytes, 0, len - Socket._headSize);
+        var data = CryptoUtils.Base64AES(bodyBytes, Socket._AESKEY);
+        console.log("Receive: mainID = " + mainID + " data = " + data);
+        EventManager.getInstance().dispatchCustomEvent(mainID.toString(), data);
+    };
+    Socket.prototype._pack = function (mainID, data, AssistantID) {
+        if (AssistantID === void 0) { AssistantID = 0; }
+        // let bodyBytes = CryptoUtils.AESBase64(data, Socket._AESKEY);
+        var bytes = new egret.ByteArray();
+        bytes.endian = egret.Endian.LITTLE_ENDIAN;
+        bytes.position = 0;
+        var body = new egret.ByteArray();
+        bytes.endian = egret.Endian.LITTLE_ENDIAN;
+        // body.writeBytes(bodyBytes,0,bodyBytes.byteLength);
+        var len = Socket._headSize + body.length;
+        bytes.writeInt(len);
+        bytes.writeInt(mainID);
+        bytes.writeInt(AssistantID);
+        bytes.writeBytes(body, 0, len);
+        return bytes;
+    };
+    Socket._AESKEY = '@ZYHD#GDMJ!112233!love**foreverX';
+    Socket._headSize = 12;
     return Socket;
 }(Single));
 __reflect(Socket.prototype, "Socket");

@@ -34,7 +34,9 @@ var ShopLayer = (function (_super) {
     };
     ShopLayer.prototype._onShopItemTap = function (event) {
         console.log(event.itemIndex);
-        platform.payOrder(event.item.gid);
+        var gid = 19;
+        // platform.payOrder(event.item.gid);
+        platform.payOrder(gid);
     };
     return ShopLayer;
 }(Layer));

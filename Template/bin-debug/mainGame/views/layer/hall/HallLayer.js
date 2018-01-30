@@ -32,7 +32,7 @@ var HallLayer = (function (_super) {
     }
     HallLayer.prototype.init = function () {
         _super.prototype.init.call(this);
-        AnimUtil.Instance.doRepeatAnimation(this.logo, 500, 3);
+        // AnimUtil.Instance.doRepeatAnimation(this.logo, 500, 3);
         // var timer = new egret.Timer(2000,3);
         // timer.addEventListener(egret.TimerEvent.TIMER,this._onTimerHandler,this);
         // timer.addEventListener(egret.TimerEvent.TIMER_COMPLETE,this._onTimerComplete,this);
@@ -104,7 +104,9 @@ var HallLayer = (function (_super) {
                 break;
             case MenuList.Rule:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Violent, true);
-                Socket.Instance.closeSocket();
+                // Socket.Instance.closeSocket();
+                var obj = { id: 10 };
+                Socket.Instance.sendData(1001, JSON.stringify(obj));
                 break;
             case MenuList.Settings:
                 PopupManager.Instance.open(PopUpLayers[PopUpLayers.SettingLayer], EffectType.LeftRigt, true);

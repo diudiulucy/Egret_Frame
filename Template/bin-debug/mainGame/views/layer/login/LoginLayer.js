@@ -28,16 +28,16 @@ var LoginLayer = (function (_super) {
         this.btn_login.removeEventListener(egret.TouchEvent.TOUCH_TAP, this.onLoginClick, this);
     };
     LoginLayer.prototype.onLoginClick = function () {
-        SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
         // FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
-        console.log("更新没");
-        egret.localStorage.setItem("userName", this.edit_name.text);
-        var a = egret.Base64Util.decode("MTEyMjMz");
-        console.log(egret.Base64Util.encode(a));
-        var str = this.edit_psw.text;
-        console.log(egret.Base64Util.encode(ArrayUtils.strToArrayBuffer(str)));
-        egret.localStorage.setItem("psw", this.edit_psw.text);
+        // console.log("更新没");
+        // egret.localStorage.setItem("userName", this.edit_name.text);
+        // let a = egret.Base64Util.decode("MTEyMjMz");
+        // console.log(egret.Base64Util.encode(a));
+        // let str = this.edit_psw.text;
+        // console.log(egret.Base64Util.encode(ArrayUtils.strToArrayBuffer(str)));
+        // egret.localStorage.setItem("psw", this.edit_psw.text);
     };
     LoginLayer.prototype.dosomething = function () {
         console.log("执行帧调度");

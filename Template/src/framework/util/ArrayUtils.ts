@@ -64,7 +64,7 @@ module ArrayUtils {
 	 * @param str
 	 */
 	export function strToArrayBuffer(str: string): ArrayBuffer {
-		let buffer = new ArrayBuffer(str.length ); 
+		let buffer = new ArrayBuffer(str.length); 
 		let bufView = new Uint8Array(buffer);
 		for (let i = 0; i < str.length; i++) {
 			bufView[i] = str.charCodeAt(i);

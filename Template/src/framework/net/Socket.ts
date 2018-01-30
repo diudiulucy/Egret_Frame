@@ -5,7 +5,7 @@
  */
 class Socket extends Single {
 	private _socket: egret.WebSocket;
-	private static readonly _AESKEY:string = '@ZYHD#GDMJ!112233!love**foreverX';
+	private static readonly _AESKEY: string = '@ZYHD#GDMJ!112233!love**foreverX';
 	private static readonly _headSize: number = 12;
 	private constructor() {
 		super();
@@ -83,7 +83,8 @@ class Socket extends Single {
 	 * 接收数据回调
 	 */
 	private _onReceiveMessage(event: egret.ProgressEvent): void {
-
+		egret.log("_onReceiveMessage");
+		this._unPack();
 	}
 
 	/**
@@ -91,31 +92,50 @@ class Socket extends Single {
 	 * 
 	 */
 	public sendData(mainID: number, data?: string, AssistantID?: number) {
-		if(this._socket && this._socket.connected){
-			console.log(JSON.stringify({mainID:mainID,data:data}));
-			let bytes:egret.ByteArray = this._pack(mainID,data,AssistantID);
+		if (this._socket && this._socket.connected) {
+			console.log("Send: mainID = " + mainID + " data = " + data);
+			let bytes: egret.ByteArray = this._pack(mainID, data, AssistantID);
 			this._socket.writeBytes(bytes);
-		}else{
+		} else {
 			egret.log("socket is not connected");
 		}
 	}
 
-	private _pack(mainID: number,data: string, AssistantID: number = 0): egret.ByteArray{
-		// let bodyBytes = 
-		let bytes:egret.ByteArray = new egret.ByteArray();
+	private _unPack(): void {
+		let byte: egret.ByteArray = new egret.ByteArray();
+		this._socket.readBytes(byte);
+		byte.endian = egret.Endian.LITTLE_ENDIAN;
+		let len = byte.readInt();
+		let mainID = byte.readInt();
+		let assistantID = byte.readInt();
+
+		let bodyBytes: egret.ByteArray = new egret.ByteArray();
+		bodyBytes.readBytes(bodyBytes, 0, len - Socket._headSize);
+
+		let data = CryptoUtils.Base64AES(bodyBytes, Socket._AESKEY);
+		console.log("Receive: mainID = " + mainID + " data = " + data);
+		EventManager.getInstance().dispatchCustomEvent(mainID.toString(), data);
+	}
+
+
+	private _pack(mainID: number, data: string, AssistantID: number = 0): egret.ByteArray {
+		// let bodyBytes = CryptoUtils.AESBase64(data, Socket._AESKEY);
+		let bytes: egret.ByteArray = new egret.ByteArray();
 		bytes.endian = egret.Endian.LITTLE_ENDIAN;
 		bytes.position = 0;
 
-
-		let body:egret.ByteArray = new egret.ByteArray();
+		let body: egret.ByteArray = new egret.ByteArray();
 		bytes.endian = egret.Endian.LITTLE_ENDIAN;
+
+		// body.writeBytes(bodyBytes,0,bodyBytes.byteLength);
+
 
 		let len = Socket._headSize + body.length;
 		bytes.writeInt(len);
 		bytes.writeInt(mainID);
 		bytes.writeInt(AssistantID);
 
-		bytes.writeBytes(body,0,len);
+		bytes.writeBytes(body, 0, len);
 
 		return bytes;
 	}

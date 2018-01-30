@@ -113,12 +113,12 @@ var EgretPlatform = (function () {
         });
     };
     ;
-    EgretPlatform.prototype.pay = function (goodsId) {
+    EgretPlatform.prototype.pay = function (data) {
         return __awaiter(this, void 0, void 0, function () {
             var payInfo;
             return __generator(this, function (_a) {
                 payInfo = {
-                    goodsId: goodsId,
+                    goodsId: data.product_id,
                     goodsNumber: this._goodsNumber,
                     serverId: this._serverId,
                     ext: this._ext,
@@ -158,7 +158,7 @@ var EgretPlatform = (function () {
             //唤起支付
             this._orderId = data.order_id;
             console.log("订单号：", this._orderId);
-            platform.pay(result.data.product_id);
+            platform.pay(result.data);
         }
     };
     EgretPlatform.prototype._onPayHandler = function (payInfo) {

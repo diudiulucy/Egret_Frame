@@ -57,9 +57,9 @@ class EgretPlatform implements Platform {
         Http.post("http://47.104.85.224:3000/shop/gift/buy/", param, this.payOrderHandler, this);
     };
 
-    async pay(goodsId) {
+    async pay(data) {
         let payInfo: nest.iap.PayInfo = {
-            goodsId: goodsId,
+            goodsId: data.product_id,
             goodsNumber: this._goodsNumber,
             serverId: this._serverId,
             ext: this._ext,
@@ -98,7 +98,7 @@ class EgretPlatform implements Platform {
             //唤起支付
             this._orderId = data.order_id;
             console.log("订单号：",this._orderId)
-            platform.pay(result.data.product_id);
+            platform.pay(result.data);
         }
     }
 

@@ -27,9 +27,12 @@ class ShopLayer extends Layer {
 		PopupManager.Instance.close(PopUpLayers[PopUpLayers.ShopLayer], EffectType.Slight);
 	}
 
-
 	private _onShopItemTap(event: eui.ItemTapEvent) {
 		console.log(event.itemIndex);
-		platform.payOrder(event.item.gid);
+		let gid = 19;
+		// platform.payOrder(event.item.gid);
+		 platform.payOrder(gid);
+		
 	}
+
 }

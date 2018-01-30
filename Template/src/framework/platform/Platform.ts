@@ -14,7 +14,7 @@ declare interface Platform {
 
     payOrder(gid):Promise<any>;     //下订单
 
-    pay(goodsId): Promise<any>;     //唤起支付
+    pay(data): Promise<any>;     //唤起支付
 }
 
 class DebugPlatform implements Platform {
@@ -43,7 +43,8 @@ class DebugPlatform implements Platform {
 
 if (!window.platform) {
     // window.platform = new EgretPlatform();
-    window.platform = new DebugPlatform();
+    // window.platform = new DebugPlatform();
+    window.platform = new SoEasySdk();
 }
 
 declare let platform: Platform;

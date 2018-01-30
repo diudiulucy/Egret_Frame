@@ -23,19 +23,31 @@
 </head>
 
 <body>
-    <img id = "bgImg" src = "resource/assets/bg/PreLoadingBg.png" style = "position: absolute" width="100%" height = "100%" >
-    <div style="margin: auto;width: 100%;height: 100%;" class="egret-player"
-         data-entry-class="Main"
-         data-orientation="landscape"
-         data-scale-mode="fixedNarrow"
-         data-frame-rate="60"
-         data-content-width="1280"
-         data-content-height="720"
-         data-show-paint-rect="false"
-         data-multi-fingered="2"
-         data-show-fps="false" data-show-log="false"
-         data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
-    </div>
+    <img id="bgImg" src="resource/assets/bg/PreLoadingBg.png" style="position: absolute" width="100%" height = "100%" >
+<div style="margin: auto;width: 100%;height: 100%;" class="egret-player" data-entry-class="Main" data-orientation="landscape" data-scale-mode="fixedNarrow" data-frame-rate="60"
+data-content-width="1280" data-content-height="720" data-show-paint-rect="false" data-multi-fingered="2" data-show-fps="false"
+data-show-log="false" data-show-fps-style="x:0,y:0,size:12,textColor:0xffffff,bgAlpha:0.9">
+</div>
+<!--<script>
+        window.zmInitSucc = function () {
+        console.log("cp start work,hhahha lucy");
+        //TODO 必须在这里或者该方法调用之后进行 sdk 调用
+        ZmSdk.getInstance().init(function (data) {
+            //初始化成功之后调用其他 sdk 能力 如 获取用户信息、支付、角色上报、设置分/
+            //享信息、分享等…
+            //掌盟 SoEasy SDK 开发者帮助文档
+            //示例：
+            if (data.retcode === "0") {
+                var userinfo = ZmSdk.getInstance().getUserInfo();
+               
+            } else if (data.retcode === "1") {
+                //初始化失败处理
+            }
+        });
+    };
+</script>
+<script type="text/javascript" src="https://cn.soeasysdk.com/soeasysr/zm_engi
+ne_v2.js"></script>-->
 <script>
     var loadScript = function (list, callback) {
         var loaded = 0;
@@ -79,15 +91,17 @@
              * "calculateCanvasScaleFactor": //a function return canvas scale factor
              * }
              **/
-            egret.runEgret({ renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor:function(context) {
-                var backingStore = context.backingStorePixelRatio ||
-                    context.webkitBackingStorePixelRatio ||
-                    context.mozBackingStorePixelRatio ||
-                    context.msBackingStorePixelRatio ||
-                    context.oBackingStorePixelRatio ||
-                    context.backingStorePixelRatio || 1;
-                return (window.devicePixelRatio || 1) / backingStore;
-            }});
+            egret.runEgret({
+                renderMode: "webgl", audioType: 0, calculateCanvasScaleFactor: function (context) {
+                    var backingStore = context.backingStorePixelRatio ||
+                        context.webkitBackingStorePixelRatio ||
+                        context.mozBackingStorePixelRatio ||
+                        context.msBackingStorePixelRatio ||
+                        context.oBackingStorePixelRatio ||
+                        context.backingStorePixelRatio || 1;
+                    return (window.devicePixelRatio || 1) / backingStore;
+                }
+            });
         });
     });
     xhr.send(null);
