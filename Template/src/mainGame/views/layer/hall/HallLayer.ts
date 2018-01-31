@@ -63,7 +63,7 @@ class HallLayer extends Layer {
 
 	protected setOnTouchListener() {
 		// this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		// this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onGameEntryClick, this);
 		this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onMenuItemTap, this);
 		this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
 		this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
@@ -71,7 +71,7 @@ class HallLayer extends Layer {
 
 	protected removeOnTouchListener() {
 		// this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-		// this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+		this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onGameEntryClick, this);
 		this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onMenuItemTap, this);
 		this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
 	}
@@ -126,7 +126,6 @@ class HallLayer extends Layer {
 				PopupManager.Instance.open(PopUpLayers[PopUpLayers.RulelLayer], EffectType.Violent, true);
 				// Socket.Instance.closeSocket();
 					let obj = {id:10};
-				
 					Socket.Instance.sendData(1001, JSON.stringify(obj));
 				break;
 			case MenuList.Settings:
@@ -149,5 +148,10 @@ class HallLayer extends Layer {
 		console.log(this.arrCol.getItemIndex(item));
 		// this.arrCol.replaceAll([{ name: "daye", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" }]);
 
+	}
+
+	private _onGameEntryClick(event: eui.ItemTapEvent){
+		console.log(event.itemIndex);
+		SceneManager.Instance.replaceScene(SceneConst[SceneConst.GameScene]);
 	}
 }

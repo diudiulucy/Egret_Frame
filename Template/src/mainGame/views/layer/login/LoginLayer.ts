@@ -25,7 +25,7 @@ class LoginLayer extends Layer {
     }
 
     private onLoginClick() {
-        // SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
+        SceneManager.Instance.replaceScene(SceneConst[SceneConst.HallScene]);
         // FrameManager.Instance.removeFrame(this);
         // platform.payOrder("6");
        

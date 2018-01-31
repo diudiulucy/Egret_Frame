@@ -95,10 +95,10 @@ declare module skins{
 	}
 }
 declare module skins{
-	class SettingLayer extends eui.Skin{
+	class Shop extends eui.Skin{
 	}
 }
 declare module skins{
-	class Shop extends eui.Skin{
+	class SettingLayer extends eui.Skin{
 	}
 }

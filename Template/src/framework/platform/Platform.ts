@@ -43,8 +43,8 @@ class DebugPlatform implements Platform {
 
 if (!window.platform) {
     // window.platform = new EgretPlatform();
-    // window.platform = new DebugPlatform();
-    window.platform = new SoEasySdk();
+    window.platform = new DebugPlatform();
+    // window.platform = new SoEasySdk();
 }
 
 declare let platform: Platform;

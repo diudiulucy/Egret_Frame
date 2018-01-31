@@ -60,14 +60,14 @@ var HallLayer = (function (_super) {
     };
     HallLayer.prototype.setOnTouchListener = function () {
         // this.player.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-        // this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.gameEntryList.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onGameEntryClick, this);
         this.menu_list.addEventListener(eui.ItemTapEvent.ITEM_TAP, this._onMenuItemTap, this);
         this.virtuallayout.addEventListener(egret.Event.CHANGE, this._onChange, this);
         this.btn_new.addEventListener(egret.TouchEvent.TOUCH_TAP, this._onBtnNewClick, this);
     };
     HallLayer.prototype.removeOnTouchListener = function () {
         // this.player.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
-        // this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onItemTap, this);
+        this.gameEntryList.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onGameEntryClick, this);
         this.menu_list.removeEventListener(eui.ItemTapEvent.ITEM_TAP, this._onMenuItemTap, this);
         this.virtuallayout.removeEventListener(egret.Event.CHANGE, this._onChange, this);
     };
@@ -124,6 +124,10 @@ var HallLayer = (function (_super) {
         var item = this.arrCol.getItemAt(0);
         console.log(this.arrCol.getItemIndex(item));
         // this.arrCol.replaceAll([{ name: "daye", price: "$2000" }, { name: "hello", price: "$3000" }, { name: "hello", price: "$3000" }]);
+    };
+    HallLayer.prototype._onGameEntryClick = function (event) {
+        console.log(event.itemIndex);
+        SceneManager.Instance.replaceScene(SceneConst[SceneConst.GameScene]);
     };
     return HallLayer;
 }(Layer));

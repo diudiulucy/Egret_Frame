@@ -41,8 +41,8 @@
 		"resource/views/ui/TabBarButtonSkin.exml",
 		"resource/views/ui/TabStackView.exml",
 		"resource/views/hall/rule/RuleLayer.exml",
-		"resource/views/hall/settings/SettingLayer.exml",
-		"resource/views/hall/shop/Shop.exml"
+		"resource/views/hall/shop/Shop.exml",
+		"resource/views/hall/settings/SettingLayer.exml"
 	],
 	"path": "resource/default.thm.json"
 }

@@ -80,7 +80,7 @@ var DebugPlatform = (function () {
 __reflect(DebugPlatform.prototype, "DebugPlatform", ["Platform"]);
 if (!window.platform) {
     // window.platform = new EgretPlatform();
-    // window.platform = new DebugPlatform();
-    window.platform = new SoEasySdk();
+    window.platform = new DebugPlatform();
+    // window.platform = new SoEasySdk();
 }
 //# sourceMappingURL=Platform.js.map

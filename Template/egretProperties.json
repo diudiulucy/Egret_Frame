@@ -48,6 +48,10 @@
 		{
 			"name": "particle",
 			"path": "../libsrc/particle"
+		},
+		{
+			"name": "physics",
+			"path": "../libsrc/physics"
 		}
 	],
 	"native": {

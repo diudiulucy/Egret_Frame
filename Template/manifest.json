@@ -10,14 +10,15 @@
 		"libs/modules/promise/promise.js",
 		"libs/modules/cryptoJS/cryptoJS.js",
 		"libs/modules/nest/nest.js",
-		"libs/modules/particle/particle.js"
+		"libs/modules/particle/particle.js",
+		"libs/modules/physics/physics.js"
 	],
 	"game": [
 		"bin-debug/framework/core/Layer.js",
 		"bin-debug/framework/core/Single.js",
 		"bin-debug/framework/core/Scene.js",
 		"bin-debug/framework/platform/SoEasySdk.js",
-		"bin-debug/framework/platform/Platform.js",
+		"bin-debug/framework/anim/MCPlayer.js",
 		"bin-debug/framework/core/Controller.js",
 		"bin-debug/framework/core/Handler.js",
 		"bin-debug/Main.js",
@@ -32,8 +33,8 @@
 		"bin-debug/framework/net/Http.js",
 		"bin-debug/framework/net/Socket.js",
 		"bin-debug/framework/platform/EgretPlatform.js",
+		"bin-debug/framework/platform/Platform.js",
 		"bin-debug/mainGame/views/scene/LoginScene.js",
-		"bin-debug/framework/anim/MCPlayer.js",
 		"bin-debug/framework/ui/ScrollerList.js",
 		"bin-debug/framework/ui/TabStackView.js",
 		"bin-debug/framework/util/ArrayUtils.js",
@@ -44,11 +45,13 @@
 		"bin-debug/mainGame/views/comp/Rank.js",
 		"bin-debug/mainGame/views/itemRender/PlayerStateItemRender.js",
 		"bin-debug/mainGame/views/layer/LoadingUI.js",
+		"bin-debug/mainGame/views/layer/game/GameLayer.js",
 		"bin-debug/mainGame/views/layer/hall/HallLayer.js",
 		"bin-debug/mainGame/views/layer/hall/rule/RulelLayer.js",
 		"bin-debug/mainGame/views/layer/hall/settings/SettingLayer.js",
 		"bin-debug/mainGame/views/layer/hall/shop/ShopLayer.js",
 		"bin-debug/mainGame/views/layer/login/LoginLayer.js",
+		"bin-debug/mainGame/views/scene/GameScene.js",
 		"bin-debug/mainGame/views/scene/HallScene.js",
 		"bin-debug/framework/adapter/AssetAdapter.js"
 	]
